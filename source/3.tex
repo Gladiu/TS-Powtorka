@@ -6,5 +6,41 @@
 \title{Wykład 3}
 \maketitle
 \begin{document}
+	\section{Podejście strukturalne do wyprowadzania modelu stanowego układu złożonego}
 
+		Złożony obiekt sterowania powstaje w wyniku połączenia wielu urządzeń wykonawczych/obróbczych lub
+		innych mniejszych obiektów  w sieć przepływu sygnałów charakteryzujących wzajemne
+		oddziaływania między tymi urządzeniami.
+		Same połączone urządzenia, które na schemacie funkcjonalnym są
+		symbolicznie przedstawione jako bloki $U_i$ mogą być same w sobie złożone ze względu na
+		dynamikę własną i właściwości statyczne. Wówczas należy je poddać dekompozycji na
+		elementarne człony typu SISO połączone wewnętrznie ze sobą.
+		
+		Za człony elementarne uważać będziemy takie części analizowanego urządzenia, których
+		dynamikę można opisać równaniami wejścia-wyjścia niskiego rzędu,
+		wyprowadzonymi z klasycznych praw fizyki takich jak: prawa Newtona, prawa Ohma,
+		Kirchoffa, prawa Bernouillego. Prawa te odnoszą się do obiektów
+		takich, których wymiary liniowe są znacznie mniejsze niż długości fal
+		przechodzących przez nie sygnałów. O takich obiektach mówimy, że są obiektami
+		o parametrach skupionych.
+
+		Rozróżniamy grupę elementów o parametrach rozłożonych takie jak:
+		\begin{itemize}
+			-item Urządzenia cieplne 
+			-item Reaktory chemiczne dużych gabarytów
+			-item Długie rurociągi
+			-item Długie linie energetyczne
+			-item Obwody mikrofalowe
+			-item Plastyczne struktury mechaniczne
+		\end{itemize}
+
+		Elementy te charakteryzują się dodatkowym etapem analizy dynamicznej
+		w sytuacji, gdy nie można jawnie rozwiązać opisujących ich dynamikę równań cząstkowych.
+		Tym etapem jest jest dyskretyzacja przestrzenna równań cząstkowych czyli dekompozycja obiektu na układ równań
+		zwyczajnych powiązanych poprzez warunki, które są stałe i niezmienne w odpowiednich punktach
+		oraz muszą być spełnione, aby uzyskać rozwiązanie. Takie warunki nazywamy warunkami brzegowymi.
+
+		Podsumowując, przy elementach o parametrach rozłożonych konieczna jest dyskretyzacja przestrzenna równań
+		cząstkowych. Dyskretyzacja przestrzenna równań cząstkowych to dekompozycja obiektu na układ równań zwyczajnych
+		powiązanych przez warunki brzegowe.
 \end{document}
