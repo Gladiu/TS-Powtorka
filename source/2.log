@@ -1,0 +1,1406 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.17)  17 DEC 2021 13:03
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**2.tex
+(./2.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2021/03/24 3.56 The Babel package
+
+(/usr/share/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2021/03/24 3.56 Babel common definitions
+\babel@savecnt=\count187
+\U@D=\dimen139
+\l@babelnohyphens=\language87
+
+(/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+)
+\bbl@dirlevel=\count188
+Package babel Info: You haven't specified a language. I'll use 'nil'
+(babel)             as the main language. Reported on input line 1160.
+
+(/usr/share/texmf-dist/tex/generic/babel/nil.ldf
+Language: nil 2021/03/24 3.56 Nil language
+\l@nil=\language88
+))
+(/usr/share/texmf-dist/tex/latex/polski/polski.sty
+Package: polski 2017/05/04 v1.3.4 Polish language package
+
+   Inputenc package detected. Catcodes not changed.
+   Switching to Polish text encoding and Polish maths fonts.
+(/usr/share/texmf-dist/tex/latex/base/ot4enc.def
+File: ot4enc.def 2020/08/10 v2.0s Standard LaTeX file
+Now handling font encoding OT4 ...
+... no UTF-8 mapping file for font encoding OT4
+)
+LaTeX Font Info:    Trying to load font information for OT4+cmr on input line 3
+60.
+
+(/usr/share/texmf-dist/tex/latex/polski/ot4cmr.fd
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT4/cmss/m/n on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT4/cmr/m/it on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT4/cmtt/m/n on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT4/cmss/bx/n on input line 360.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT4/cmr/bx/it on input line 360.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `normal' on input line 360.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT4/cmr/m/n on input line 360.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/plm/m/it on input line 360.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/plsy/m/n on input line 360.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/plex/m/n on input line 360.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `bold' on input line 360.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 360.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/plm/b/it on input line 360.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 360.
+)
+(/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count189
+\float@exts=\toks17
+\float@box=\box47
+\@float@everytoks=\toks18
+\@floatcapt=\box48
+)
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \maketitle
+              
+? quit
+OK, entering \batchmode...
+LaTeX Font Info:    Trying to load font information for OML+plm on input line 7
+.
+ (/usr/share/texmf-dist/tex/latex/polski/omlplm.fd
+File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 
+7.
+ (/usr/share/texmf-dist/tex/latex/polski/omsplsy.fd
+File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Trying to load font information for OMX+plex on input line 
+7.
+ (/usr/share/texmf-dist/tex/latex/polski/omxplex.fd
+File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <12> on input line 7.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <8> on input line 7.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 7.
+
+LaTeX Warning: No \author given.
+
+
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count190
+\l__pdf_internal_box=\box49
+)
+No file 2.aux.
+\openout1 = `2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+
+Overfull \hbox (5.1209pt too wide) in paragraph at lines 11--11
+[]\OT4/cmr/bx/n/12 Ustalanie wymiaru wektora stanu na podstawie równa«
+ []
+
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10> on input line 13.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <7> on input line 13.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <5> on input line 13.
+
+Overfull \hbox (6.36172pt too wide) in paragraph at lines 17--20
+\OT4/cmr/m/n/10 znajomo±ci n warunków pocz¡tkowych. Liczba warunków pocz¡tkowyc
+h wyznacza
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.30 		dla ukÅ‚adu o _
+                      _jednym wejÅ›ciu__
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.30 		dla ukÅ‚adu o __
+                       jednym wejÅ›ciu__
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 30.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.30 		dla ukÅ‚adu o __jednym wejÅ›ciu__
+                                        
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing { inserted.
+<to be read again> 
+                   \par 
+l.31 
+     
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.31 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.31 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.31 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.31 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no ± in font plmi7!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.57 		AÅ¼ do n_
+                {p}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.58 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (3.36166pt too wide) in paragraph at lines 68--70
+[]\OT4/cmr/m/n/10 Rezultatem takiej definicji wektora zmiennych stanu jest to »
+e macierz modelu
+ []
+
+! Misplaced alignment tab character &.
+l.73 			  0    &
+                   1    &   0    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.73 			  0    &   1    &
+                            0    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.73 			  0    &   1    &   0    &
+                                     0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.73 			  0    &   1    &   0    &   0    &
+                                            \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.73 ...0    &   1    &   0    &   0    & \cdots &
+                                                     0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.73 ...   &   0    &   0    & \cdots &   0      &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.74 			  0    &
+                   0    &   1    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.74 			  0    &   0    &
+                            1    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.74 			  0    &   0    &   1    &
+                                     0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.74 			  0    &   0    &   1    &   0    &
+                                            \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.74 ...0    &   0    &   1    &   0    & \cdots &
+                                                     0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.74 ...   &   1    &   0    & \cdots &   0      &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.75 			  0    &
+                   0    &   0    &   1    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.75 			  0    &   0    &
+                            0    &   1    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.75 			  0    &   0    &   0    &
+                                     1    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.75 			  0    &   0    &   0    &   1    &
+                                            \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.75 ...0    &   0    &   0    &   1    & \cdots &
+                                                     0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.75 ...   &   0    &   1    & \cdots &   0      &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.76 			  0    &
+                   0    &   0    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.76 			  0    &   0    &
+                            0    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.76 			  0    &   0    &   0    &
+                                     0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.76 			  0    &   0    &   0    &   0    &
+                                            \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.76 ...0    &   0    &   0    &   0    & \cdots &
+                                                     0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.76 ...   &   0    &   0    & \cdots &   0      &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.77 			\vdots &
+                 \vdots & \vdots & \vdots & \ddots & \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.77 			\vdots & \vdots &
+                          \vdots & \vdots & \ddots & \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.77 			\vdots & \vdots & \vdots &
+                                   \vdots & \ddots & \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.77 			\vdots & \vdots & \vdots & \vdots &
+                                            \ddots & \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.77 ...dots & \vdots & \vdots & \vdots & \ddots &
+                                                   \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.77 ...ts & \vdots & \vdots & \ddots & \vdots   &
+                                                   \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.78 			  0    &
+                   0    &   0    &   0    & \cdots &   0      &   1    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.78 			  0    &   0    &
+                            0    &   0    & \cdots &   0      &   1    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.78 			  0    &   0    &   0    &
+                                     0    & \cdots &   0      &   1    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.78 			  0    &   0    &   0    &   0    &
+                                            \cdots &   0      &   1    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.78 ...0    &   0    &   0    &   0    & \cdots &
+                                                     0      &   1    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.78 ...   &   0    &   0    & \cdots &   0      &
+                                                     1    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.79 			 -a_{1}&
+                  -a_{2}&  -a_{3}&  -a_{4}& \cdots & -a_{m-1} & -a_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.79 			 -a_{1}&  -a_{2}&
+                           -a_{3}&  -a_{4}& \cdots & -a_{m-1} & -a_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.79 			 -a_{1}&  -a_{2}&  -a_{3}&
+                                    -a_{4}& \cdots & -a_{m-1} & -a_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.79 			 -a_{1}&  -a_{2}&  -a_{3}&  -a_{4}&
+                                            \cdots & -a_{m-1} & -a_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.79 ...a_{1}&  -a_{2}&  -a_{3}&  -a_{4}& \cdots &
+                                                   -a_{m-1} & -a_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.79 ...{2}&  -a_{3}&  -a_{4}& \cdots & -a_{m-1} &
+                                                   -a_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (80.36554pt too wide) detected at line 81
+\OML/plm/m/it/10 A \OT4/cmr/m/n/10 = [] 100 [] 00[] 0010 [] 00[] 0001 [] 00[] 0
+000 [] 00[] [][][][] [] [][][] 0000 [] 01[]  \OMS/plsy/m/n/10 ^^@ \OML/plm/m/it
+/10 a[] \OMS/plsy/m/n/10 ^^@ \OML/plm/m/it/10 a[] \OMS/plsy/m/n/10 ^^@ \OML/plm
+/m/it/10 a[] \OMS/plsy/m/n/10 ^^@ \OML/plm/m/it/10 a[] [] \OMS/plsy/m/n/10 ^^@ 
+\OML/plm/m/it/10 a[] \OMS/plsy/m/n/10 ^^@ \OML/plm/m/it/10 a[]
+ []
+
+! Misplaced alignment tab character &.
+l.86 			  b_{1} &
+                    0    &   0    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.86 			  b_{1} &   0    &
+                             0    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.86 			  b_{1} &   0    &   0    &
+                                      0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.86 			  b_{1} &   0    &   0    &   0    &
+                                             \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.86 ..._{1} &   0    &   0    &   0    & \cdots &
+                                                     0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.86 ...   &   0    &   0    & \cdots &   0      &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.87 			  0     &
+                   b_{2} &   0    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.87 			  0     &  b_{2} &
+                             0    &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.87 			  0     &  b_{2} &   0    &
+                                      0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.87 			  0     &  b_{2} &   0    &   0    &
+                                             \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.87 ...     &  b_{2} &   0    &   0    & \cdots &
+                                                     0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.87 ...2} &   0    &   0    & \cdots &   0      &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.88 			  0     &
+                    0    & b_{3}  &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.88 			  0     &   0    &
+                           b_{3}  &   0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.88 			  0     &   0    & b_{3}  &
+                                      0    & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.88 			  0     &   0    & b_{3}  &   0    &
+                                             \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.88 ...     &   0    & b_{3}  &   0    & \cdots &
+                                                     0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.88 ...   & b_{3}  &   0    & \cdots &   0      &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.89 			  0     &
+                    0    &   0    &  b_{4} & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.89 			  0     &   0    &
+                             0    &  b_{4} & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.89 			  0     &   0    &   0    &
+                                     b_{4} & \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.89 			  0     &   0    &   0    &  b_{4} &
+                                             \cdots &   0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.89 ...     &   0    &   0    &  b_{4} & \cdots &
+                                                     0      &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.89 ...   &   0    &  b_{4} & \cdots &   0      &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.90 			\vdots  &
+                  \vdots & \vdots & \vdots & \ddots & \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.90 			\vdots  & \vdots &
+                           \vdots & \vdots & \ddots & \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.90 			\vdots  & \vdots & \vdots &
+                                    \vdots & \ddots & \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.90 			\vdots  & \vdots & \vdots & \vdots &
+                                             \ddots & \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.90 ...ots  & \vdots & \vdots & \vdots & \ddots &
+                                                   \vdots   & \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.90 ...ts & \vdots & \vdots & \ddots & \vdots   &
+                                                   \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.91 			  0     &
+                    0    &   0    &   0    & \cdots &  b_{m-1} &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.91 			  0     &   0    &
+                             0    &   0    & \cdots &  b_{m-1} &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.91 			  0     &   0    &   0    &
+                                      0    & \cdots &  b_{m-1} &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.91 			  0     &   0    &   0    &   0    &
+                                             \cdots &  b_{m-1} &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.91 ...     &   0    &   0    &   0    & \cdots &
+                                                    b_{m-1} &   0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.91 ...   &   0    &   0    & \cdots &  b_{m-1} &
+                                                     0    \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.92 			  0     &
+                    0    &   0    &   0    & \cdots &   0      &   b_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.92 			  0     &   0    &
+                             0    &   0    & \cdots &   0      &   b_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.92 			  0     &   0    &   0    &
+                                      0    & \cdots &   0      &   b_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.92 			  0     &   0    &   0    &   0    &
+                                             \cdots &   0      &   b_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.92 ...     &   0    &   0    &   0    & \cdots &
+                                                     0      &   b_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.92 ...   &   0    &   0    & \cdots &   0      &
+                                                     b_{m}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (29.98676pt too wide) detected at line 94
+\OML/plm/m/it/10 B \OT4/cmr/m/n/10 = [][] 000 [] 00[] 0\OML/plm/m/it/10 b[]\OT4
+/cmr/m/n/10 00 [] 00[] 00\OML/plm/m/it/10 b[]\OT4/cmr/m/n/10 0 [] 00[] 000\OML/
+plm/m/it/10 b[] [] \OT4/cmr/m/n/10 00[] [][][][] [] [][][] 0000 [] \OML/plm/m/i
+t/10 b[]\OT4/cmr/m/n/10 0[] 0000 [] 0\OML/plm/m/it/10 b[]
+ []
+
+! Misplaced alignment tab character &.
+l.99 			  0    &
+                   0    &   0    &   0    & \cdots &   0      &   1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.99 			  0    &   0    &
+                            0    &   0    & \cdots &   0      &   1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.99 			  0    &   0    &   0    &
+                                     0    & \cdots &   0      &   1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.99 			  0    &   0    &   0    &   0    &
+                                            \cdots &   0      &   1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.99 ...0    &   0    &   0    &   0    & \cdots &
+                                                     0      &   1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.99 ...   &   0    &   0    & \cdots &   0      &
+                                                     1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (7.83405pt too wide) in paragraph at lines 101--105
+\OT4/cmr/m/n/10 Ukªad równa« stanu i ukªad równa« wyj±cia wielowymiarowego obie
+ktu sterowania
+ []
+
+
+Overfull \hbox (14.61171pt too wide) in paragraph at lines 123--130
+[]\OT4/cmr/m/n/10 Jednak przej±cie z transmitancji na równania stanu nie jest j
+u» tak jednoznaczne.
+ []
+
+
+Overfull \hbox (14.77837pt too wide) in paragraph at lines 123--130
+\OT4/cmr/m/n/10 nast¦pnie okre±li¢ na podstawie schematu poszczególne elementy 
+macierzy A,B,C,D.
+ []
+
+
+Overfull \vbox (412.08844pt too high) has occurred while \output is active []
+
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (46.36455pt too wide) in paragraph at lines 140--140
+[]\OT4/cmr/bx/n/14.4 Definicja zmiennych fazowych { przypadek obecno±ci
+ []
+
+
+Overfull \hbox (0.61171pt too wide) in paragraph at lines 146--150
+\OT4/cmr/m/n/10 pewnych przebiegów sygnaª b¦dzie zerowa¢ stan. Po automatycznem
+u nazywamy
+ []
+
+
+Overfull \hbox (0.83301pt too wide) in paragraph at lines 153--157
+\OT4/cmr/m/n/10 Model wielokanaªowy ukªadu MIMO zakªada, »e przepªyw sygnaªów w
+ej±ciowych
+ []
+
+
+Overfull \hbox (17.55617pt too wide) in paragraph at lines 158--161
+[]\OT4/cmr/m/n/10 Czªon dynamiczny cz¦sto charakteryzuje si¦ wyst¦powaniem loka
+lnego sprz¦»enia
+ []
+
+
+Overfull \hbox (7.19522pt too wide) in paragraph at lines 174--176
+[]\OT4/cmr/m/n/10 Wspóªczynniki wielomianu równania charakterystycznego ukªadu 
+zamkni¦tego
+ []
+
+! Display math should end with $$.
+<to be read again> 
+                    
+l.186 ...u_{i}(t)^{(m-1)} + ... + b_{0} u_{i}(t) $
+                                                  
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! You can't use `\eqno' in horizontal mode.
+\endequation ->\eqno 
+                     \hbox {\@eqnnum }$$\@ignoretrue 
+l.187 	\end{equation}
+                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.187 	\end{equation}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.187 	\end{equation}
+                     
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+ [2]
+Overfull \hbox (37.97285pt too wide) in paragraph at lines 193--196
+[]\OT4/cmr/m/n/10 Warto zauwa»y¢ »e pomimo tych ogranicze« nie zmieniamy wªa±ci
+wo±ci dynamicznych
+ []
+
+
+Overfull \hbox (7.55615pt too wide) in paragraph at lines 193--196
+\OT4/cmr/m/n/10 zmienione Wpªywa to jednak na takie cechy jak sterowalno±¢ oraz
+ obserwowalno±¢. 
+ []
+
+
+Overfull \hbox (20.72281pt too wide) in paragraph at lines 197--200
+\OT4/cmr/m/n/10 cyfrowego/schodkowego. Przez to »e pochodne b¦d¡ nam wzrasta¢ d
+o niesko«czono±ci
+ []
+
+
+Overfull \hbox (9.08397pt too wide) in paragraph at lines 201--206
+\OT4/cmr/m/n/10 punkcie zera te zmieniaj¡ poªo»enie na pªaszczy¹nie zespolonej 
+i mog¡ koincydowa¢
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.207 	#
+        ## Definicja zmiennych stanu gdy w transmitancji obiektu wystÄ™pujÄ…...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.207 	##
+         # Definicja zmiennych stanu gdy w transmitancji obiektu wystÄ™pujÄ…...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.207 	###
+           Definicja zmiennych stanu gdy w transmitancji obiektu wystÄ™pujÄ…...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.230 	WÃ³wczas wspÃ³Å‚czynniki \beta
+                                     _{k} wynoszÄ…
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \k invalid in math mode on input line 230.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.231 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ¡ in font plmi10!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.240 	- B = [\beta
+                   _{2} ... \beta_{n}]^{T}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.243 \end{document}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+ [3] (./2.aux) ) 
+Here is how much of TeX's memory you used:
+ 1481 strings out of 478994
+ 21756 string characters out of 5864750
+ 338177 words of memory out of 5000000
+ 18991 multiletter control sequences out of 15000+600000
+ 412567 words of font info for 50 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 44i,10n,50p,202b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/
+texmf-dist/fonts/enc/dvips/pl/plsc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/p
+l/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr/share/texmf
+-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/pl/plmi10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi5.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/pl/plr10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb><
+/usr/share/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texmf-dist/fo
+nts/type1/public/pl/plr5.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr7.
+pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-d
+ist/fonts/type1/public/pl/plsy5.pfb></usr/share/texmf-dist/fonts/type1/public/p
+l/plsy7.pfb>
+Output written on 2.pdf (3 pages, 76393 bytes).
+PDF statistics:
+ 66 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
