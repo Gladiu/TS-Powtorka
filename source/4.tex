@@ -1,0 +1,67 @@
+\author{Kasiński}
+\title{Wykład 3}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{polski}
+\usepackage{float}
+\usepackage{graphics}
+\maketitle
+\begin{document}
+	Ważnym pojęciem w analizie właściwości obiektów sterowania opisanych nieliniowymi
+	równaniami stanu i wyjścia jest punkt stacjonarny. Rozważmy następujący model:
+
+	\begin{equation}
+		\dot{x}(t) = f(x(t), u(t))
+	\end{equation}
+	\begin{equation}
+		y(t) = h(x(t))
+	\end{equation}
+
+	Pierwsze równanie, to wektorowe równanie stanu określające, wymuszoną przez
+	sygnały sterujące { $ u_i(t), i=1,...,m $ }, trajektorię stanu układu dynamicznego w przestrzeni
+	n-wymiarowej jako symultaniczne rozwiązanie układu równań różniczkowych pierwszego rzędu postaci:
+
+	\begin{equation}
+		\dot{x_1} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t))
+	\end{equation}
+	\begin{equation}
+		\dot{x_2} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t))
+	\end{equation}
+
+	Aż do
+
+	\begin{equation}
+		\dot{x_n} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t))
+	\end{equation}
+
+	Wystarczy, że jedna z funkcji $f_i$ jest nieliniowa, to mamy zadanie dynamiki nieliniowej, w
+	którym to przypadku stosunkowo rzadko można uzyskać rozwiązanie jawne. Można
+	wówczas spróbować je rozwiązać metodą całkowania numerycznego, pod warunkiem że
+	rozwiązanie istnieje a iteracje są do niego zbieżne. Trudno jednak udowodnić istnienie
+	rozwiązania w większości przypadków wielowymiarowych problemów nieliniowych,
+	zwłaszcza dla przypadków z wymuszeniem.
+
+	Dlatego dostępnym sposobem analizy zachowania układu w niewielkim otoczeniu
+	wybranego punktu przestrzeni stanu jest lokalna linearyzacja modelu. Autonomiczny,
+	nieliniowy obiekt dynamiczny opisany jest równaniami:
+
+	\begin{equation}
+		\dot{x}(t) = f(x(t))
+	\end{equation}
+
+	\begin{equation}
+		y(t) = h(x(t))
+	\end{equation}
+
+	W szczególności istotne jest zachowanie układu autonomicznego (inaczej swobodnego,
+	czyli pozbawionego sterowania) w otoczeniu tzw. punktów stacjonarnych, a więc takich,
+	w których układ pozostaje w stanie ustalonym. Punkty te można wyznaczyć rozwiązując
+	układ algebraicznych równań nieliniowych postaci:
+	
+	\begin{equation}
+		f(x(t)) = 0
+	\end{equation}
+
+
+\end{document}
