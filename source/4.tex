@@ -23,16 +23,11 @@
 	n-wymiarowej jako symultaniczne rozwiązanie układu równań różniczkowych pierwszego rzędu postaci:
 
 	\begin{equation}
-		\dot{x_1} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t))
-	\end{equation}
-	\begin{equation}
-		\dot{x_2} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t))
-	\end{equation}
-
-	Aż do
-
-	\begin{equation}
-		\dot{x_n} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t))
+		\begin{aligned}
+			\dot{x_1} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t)) \\
+			\dot{x_2} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t)) \\
+			\dot{x_n} = f_1(x_1(t), x_2(t),...,x_n(t); u_1(t),...,u_m(t))
+		\end{aligned}
 	\end{equation}
 
 	Wystarczy, że jedna z funkcji $f_i$ jest nieliniowa, to mamy zadanie dynamiki nieliniowej, w
@@ -63,5 +58,84 @@
 		f(x(t)) = 0
 	\end{equation}
 
+	Zakładamy, że układ jest regularny, lub inaczej mówiąc niezdegenerowany. Wówczas rozwiązanie stanowi zbiór
+	izolowanych punktów w przestrzeni stanu takich, że 
 
+	\begin{equation}
+		x_s^i 
+	\end{equation}
+	dla 
+	\begin{equation}
+ 		i=1,2,..., r
+	\end{equation}
+	Liczba miejsc zerowych funkcji
+	wektorowej f
+	wynika nie tylko z liczby współrzędnych wektora (liczby równań
+	algebraicznych), ale zależy od typów nieliniowości.
+	\subsection{Przykłady}
+		Dany jest układ dynamiczny pierwszego rzędu dany równaniem
+
+		\begin{equation}
+			\dot{x} = -x^2 + 2
+		\end{equation}
+
+		Rozwiązując równanie kwadratowe otrzymujemy rozwiązania
+		$x = \sqrt{2}$ oraz $x = -\sqrt{2}$
+		Są to dwa punkty stacjonarne.
+
+		Następny przykład ma bardziej złożone rozwiązanie.
+
+		\begin{equation}
+			\begin{aligned}
+				\dot{x_1} = x_1 + x_2 \\ 
+				\dot{x_2} = x_1 \left( \cos{x_2} + \frac{1}{2} \right)
+			\end{aligned}
+		\end{equation}
+
+		Ma przeliczalnie wiele punktów stacjonarnych:
+
+		\begin{equation}
+			\left[ -\frac{\pi}{3} - 2k\pi, \frac{\pi}{3} + 2k\pi \right]
+		\end{equation}
+
+		Dla
+
+		\begin{equation}
+			k = 0, 1, ...
+		\end{equation}
+		
+		Wiedząc że układ zdegenerowany to taki którego punkty stacjonarne nie 
+		stanowią izolowanych punktów, a są na przykład krzywą. Możemy stwierdzić,
+		że takie układy charakteryzują się lokalnym defektem rzędu rozmaitości stanu.
+		lub istnieniem podrozmaitości osobliwej.
+
+		\section{Nieliniowe układy afiniczne}
+
+		Ważną podklasę ogólnych modeli liniowych stanowią tak zwane modele afiniczne.
+
+		\begin{equation}
+			\dot{x}(t) = f(x(t)) + g_1(x(t))u_1(t) + g_2(x(t))u_2(t) + ...
+			+ g_m(x(t))u_m(t) 
+		\end{equation}
+
+		\begin{equation}
+			y(t) = h(x(t))
+		\end{equation}
+
+		Modele tej klasy dobrze reprezentują ( nie tylko lokalnie) dynamikę 
+		układów nieliniowych, w których w równaniach stanu, można rozdzielić argumenty
+		w postaci zmiennych stanu od sygnałów sterujących. Nie nakładają dodatkowych 
+		ograniczeń na dynamikę układu
+		autonomicznego. Akcję sterowań można interpretować jako możliwość wpływania na
+		ewolucję wektora stanu w każdym aktualnym punkcie x(t) trajektorii, w hiperpłaszczyźnie
+		$T_x(x(t))$ stycznej do niej w tym punkcie. Pola wektorowe $g_i(x(t))$  dla 
+		$i= 1, ... , m$ można
+		interpretować jako kierunkowe współczynniki wzmocnienia odpowiednich sygnałów
+		sterujących. Podkreślają one lokalny charakter sterowania (zmianę kierunku i „siły działania”
+		skalarnego sygnału sterującego wzdłuż trajektorii stanu). Wektor sterowań jest elementem
+		liniowej przestrzeni sterowań, co ułatwia operowanie nim. Z punktu widzenia sterowalności
+		układu istotne, aby pola wektorowe tworzyły układ wektorów lokalnie liniowo niezależnych,
+		a po uzupełnieniu o pole wektorowe f(x(t))
+		umożliwiały osiąganie dowolnego punktu w
+		przestrzeni stanu z dowolnego stanu początkowego poprzez odpowiednie sterowanie.
 \end{document}
