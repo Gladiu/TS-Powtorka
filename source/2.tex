@@ -29,11 +29,15 @@
 
 		Przyjmijmy następującą definicje współrzędnych wektora zmiennych stanu x
 		dla układu o __jednym wejściu__
-
-		$ x_{1} = y $
-		$ x_{2} = y'$
-		...
-		$ x_{n} = y^{(n-1)}$
+		
+		\begin{equation}
+			\begin{aligned}
+				 x_{1} = y //
+				 x_{2} = y' //
+				...
+				 x_{n} = y^{(n-1)} //
+			\end{aligned}
+		\end{equation}
 
 		Z powyższej definicji wynika że
 
@@ -44,23 +48,41 @@
 		Dla wielu wyjść powyższe równania możemy zapisać analogicznie
 
 		Dla wyjścia 1
+		\begin{equation}
+			\begin{aligned}
 
-		$ y_{1} = x_{1} $
-		$ \dot{y_{1}} = x_{2} $
-		...
-		$ y_{1}^{(n_{1}-1)} = x_{n_{1}} $
+				 y_{1} = x_{1} \\
+				 \dot{y_{1}} = x_{2} \\
+				... \\
+				 y_{1}^{(n_{1}-1)} = x_{n_{1}}
 
-		$ y_{2} = x_{n_{1}+1} $
-		$ \dot{y_{2}} = x_{n_{1}+2} $
-		...
-		$ y_{2}^{(n_{2}-1)} = x_{n_{1}+n_{2}} $
+			\end{aligned}
+		\end{equation}
 
-		Aż do n_{p}
+		\begin{equation}
+			\begin{aligned}
 
-		$ y_{p} = x_{n_{1}+...+n_{p-1} + 1} $
-		$ \dot{y_{p}} = x_{n_{1}+...+n_{p-1} + 2} $
-		...
-		$ y_{n}^{(n_{p}-1)} = x_{n_{1}+...+n_{p}} $
+				 y_{2} = x_{n_{1}+1} \\
+				 \dot{y_{2}} = x_{n_{1}+2} \\
+				... \\
+				 y_{2}^{(n_{2}-1)} = x_{n_{1}+n_{2}}
+
+			\end{aligned}
+		\end{equation}
+
+		Aż do $ n_{p} $
+
+		\begin{equation}
+			\begin{aligned}
+
+				 y_{p} = x_{n_{1}+...+n_{p-1} + 1}  \\
+				 \dot{y_{p}} = x_{n_{1}+...+n_{p-1} + 2}  \\
+				... \\
+				 y_{n}^{(n_{p}-1)} = x_{n_{1}+...+n_{p}}
+
+			\end{aligned}
+		\end{equation}
+
 
 		(przyp. tł. Zrozumienie tych równań nie jest krytyczne dla dalszej części,
 		jednak na wykładzie są one napisane z błędem oraz dziwnym sposobem, gdzie
@@ -104,8 +126,14 @@
 		liniowych właściwościach statycznych i dynamicznych można zapisać w postaci
 		równań macierzowych
 
-		$ \dot{x} = Ax + Bu $
-		$ y       = Cx + Du $
+		\begin{equation}
+			\begin{aligned}
+
+				 \dot{x} = Ax + Bu \\
+				 y       = Cx + Du 
+
+			\end{aligned}
+		\end{equation}
 
 		Te zawiłe równania doprowadziły nas do równań stanu. Przypomnijmy sobie ich nazwy
 
@@ -212,33 +240,56 @@
 
 	Należy zmienić definicję zmiennych stanu nieznacznie z formy
 
-	$ x_{1} = y $
-	$ x_{2} = y'$
-	...
-	$ x_{n} = y^{n-1}$
+	\begin{equation}
+		\begin{aligned}
+
+			 x_{1} = y  \\
+			 x_{2} = y' \\
+			...
+			 x_{n} = y^{n-1} \\
+
+		\end{aligned}
+	\end{equation}
 
 	Na
 
-	$ x_{1} = y - \beta_{0}u $
-	$ x_{2} = y' - \beta_{1}u$
-	...
-	$ x_{n} = y^{(n-1)} - \beta_{n-1}u$
+	\begin{equation}
+		\begin{aligned}
+
+			 x_{1} = y - \beta_{0}u \\
+			 x_{2} = y' - \beta_{1}u \\
+			... \\
+			 x_{n} = y^{(n-1)} - \beta_{n-1}u \\
+
+		\end{aligned}
+	\end{equation}
 
 	W wyniku powyższej definicji zmiennych fazowych równanie wejścia-wyjścia
 	zostaje przekształcone do postaci
-	$ y^{(n)}(t) = \dot{x_{n}}(t) = -a_{1}x_{1}(t) - a_{2}x_{2}(t) + ... + a_{n}x_{n}(t) + \beta_{m}u(t) $
+
+	\begin{equation}
+
+		y^{(n)}(t) = \dot{x_{n}}(t) = -a_{1}x_{1}(t) - a_{2}x_{2}(t) + ... + a_{n}x_{n}(t) + \beta_{m}u(t) 
+
+	\end{equation}
 
 	Wówczas współczynniki \beta_{k} wynoszą
 
-	$ \beta_{1} = b_{n} $
-	$ \beta_{2} = b_{n-1} - a_{n-1}b_{0}$
-	...
-	$ \beta_{n} = b_{1} - a_{n-1}b_{n-1} - ... - a_{1}b_{1}$
+	\begin{equation}
+		\begin{aligned}
+
+			 \beta_{1} = b_{n} \\
+			 \beta_{2} = b_{n-1} - a_{n-1}b_{0}\\
+			...
+			 \beta_{n} = b_{1} - a_{n-1}b_{n-1} - ... - a_{1}b_{1}\\
+
+		\end{aligned}
+	\end{equation}
 
 	Taki układ ma wtedy postać taką że
 
 	- Macierz A ma postać Frobeniusa
-	- B = [\beta_{2} ... \beta_{n}]^{T}
-	- C = [0 0 0 0 1]
-	- D = [\beta_{1}
+	- B = $[\beta_{2} ... \beta_{n}]^{T}$
+	- C = $[0 0 0 0 1]$
+	- D = $[\beta_{1}$
 \end{document}
