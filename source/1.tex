@@ -3,10 +3,10 @@
 \usepackage{babel}
 \usepackage{polski}
 \usepackage{float}
+\usepackage{graphicx}
 \title{Wykład 1}
-\maketitle
 \begin{document}
-
+\maketitle
 	\section{Analiza wielowymiarowego obiektu sterowania w przestrzeni stanu}
 
 	\subsection{Definicja obiektu sterowania}
@@ -67,7 +67,7 @@
 		do danego wyjścia obiektu. Tą ścieżkę łatwo sobie zwizualizować na
 		Grafie Sygnałowym Masona
 		\begin{figure}
-			\includegraphics{GrafMasona.png}
+			\includegraphics[height=0.5\textwidth]{GrafMasona.png}
 		\end{figure}
 		Taki graf może pomóc nam rozrysować połączenie dowolnie obranego wejścia z
 		dowolnie obranym wyjściem. Jak widać takie połączenie możemy opisać transmitancją.
@@ -146,8 +146,8 @@
 			y^{(n)}(t) + a_{n-1} y^{(n-1)}(t) + ... +   a_{0} y(t) = b_{(m)} u(t) + ... + b_{0} u(t)
 		\end{equation}
 		Najczęściej mamy do czynienia z przypadkami, gdy w poszczególnych
-		transmitancjach G_{ij}(s) nie występują zera.
-		Wtedy taki kanał ma statyczny współczynnik wzmocnienia k_{ij} = b_{0 ij}
+		transmitancjach $G_{ij}(s)$ nie występują zera.
+		Wtedy taki kanał ma statyczny współczynnik wzmocnienia $k_{ij} = b_{0 ij}$
 
 		Postać ogólną równania otrzymujemy rozwiązaując równanie jednorodne
 		\begin{equation}

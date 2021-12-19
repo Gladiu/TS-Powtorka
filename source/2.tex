@@ -1,13 +1,13 @@
 \documentclass{article}
+\title{Wykład 2}
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 \usepackage{polski}
 \usepackage{float}
 \usepackage{graphics}
-\title{Wykład 2}
-\maketitle
+\usepackage{amsmath}
 \begin{document}
-
+	\maketitle
 	\section{Tworzenie modelu obiektu wielowymiarowego w przestrzeni stanu cz. 2}
 	\subsection{Ustalanie wymiaru wektora stanu na podstawie równań wejścia-wyjścia}
 
@@ -28,60 +28,47 @@
 	\subsection{Definicja zmiennych stanu jako zmiennych fazowych}
 
 		Przyjmijmy następującą definicje współrzędnych wektora zmiennych stanu x
-		dla układu o __jednym wejściu__
+		dla układu o jednym wejściu
 		
-		\begin{equation}
-			\begin{aligned}
+		
+			\begin{align*}
 				 x_{1} = y //
 				 x_{2} = y' //
-				...
-				 x_{n} = y^{(n-1)} //
-			\end{aligned}
-		\end{equation}
+				... //
+				 x_{n} = y^{(n-1)} 
+			\end{align*}
 
 		Z powyższej definicji wynika że
 
 		$ x_{i+1} = \dot{x_{i}} $
 
-		Dla i = <1;n-1>
+		Dla $i = <1;n-1> $
 
 		Dla wielu wyjść powyższe równania możemy zapisać analogicznie
 
 		Dla wyjścia 1
-		\begin{equation}
-			\begin{aligned}
-
+			\begin{align*}
 				 y_{1} = x_{1} \\
 				 \dot{y_{1}} = x_{2} \\
 				... \\
 				 y_{1}^{(n_{1}-1)} = x_{n_{1}}
+			\end{align*}
 
-			\end{aligned}
-		\end{equation}
-
-		\begin{equation}
-			\begin{aligned}
-
+			\begin{align*}
 				 y_{2} = x_{n_{1}+1} \\
 				 \dot{y_{2}} = x_{n_{1}+2} \\
 				... \\
 				 y_{2}^{(n_{2}-1)} = x_{n_{1}+n_{2}}
-
-			\end{aligned}
-		\end{equation}
+			\end{align*}
 
 		Aż do $ n_{p} $
 
-		\begin{equation}
-			\begin{aligned}
-
+			\begin{align*}
 				 y_{p} = x_{n_{1}+...+n_{p-1} + 1}  \\
 				 \dot{y_{p}} = x_{n_{1}+...+n_{p-1} + 2}  \\
 				... \\
 				 y_{n}^{(n_{p}-1)} = x_{n_{1}+...+n_{p}}
-
-			\end{aligned}
-		\end{equation}
+			\end{align*}
 
 
 		(przyp. tł. Zrozumienie tych równań nie jest krytyczne dla dalszej części,
@@ -126,14 +113,10 @@
 		liniowych właściwościach statycznych i dynamicznych można zapisać w postaci
 		równań macierzowych
 
-		\begin{equation}
-			\begin{aligned}
-
+			\begin{align*}
 				 \dot{x} = Ax + Bu \\
 				 y       = Cx + Du 
-
-			\end{aligned}
-		\end{equation}
+			\end{align*}
 
 		Te zawiłe równania doprowadziły nas do równań stanu. Przypomnijmy sobie ich nazwy
 
@@ -212,7 +195,7 @@
 	pomiędzy kanałami oraz że mamy "wirtualne wymuszenie" zewnętrzne w postaci
 
 	\begin{equation}
-		\dot{u_{i}}(t) = b_{m}u_{i}(t)^{(m)} + b_{m-1}u_{i}(t)^{(m-1)} + ... + b_{0} u_{i}(t) $
+		\dot{u_{i}}(t) = b_{m}u_{i}(t)^{(m)} + b_{m-1}u_{i}(t)^{(m-1)} + ... + b_{0} u_{i}(t)
 	\end{equation}
 
 	Rozumienie takich oddziałowywań jako "wymuszeń wirtualnych" nakłada istotne ograniczenia
@@ -233,58 +216,44 @@
 	położenie na płaszczyźnie zespolonej i mogą koincydować (pokrywać się) z
 	biegunami danego kanału, niekoniecznie związanymi z danym urządzeniem.
 
-	### Definicja zmiennych stanu gdy w transmitancji obiektu występują zera
+	\subsection{ Definicja zmiennych stanu gdy w transmitancji obiektu występują zera}
 
 	Dla uproszczenia poniższe rozważania będą rozpisane dla jednego kanału
 	wejścia-wyjścia jednak są one prawdziwe dla wszystkich kanałów.
 
 	Należy zmienić definicję zmiennych stanu nieznacznie z formy
 
-	\begin{equation}
-		\begin{aligned}
-
+		\begin{align*}
 			 x_{1} = y  \\
 			 x_{2} = y' \\
 			...
 			 x_{n} = y^{n-1} \\
-
-		\end{aligned}
-	\end{equation}
+		\end{align*}
 
 	Na
 
-	\begin{equation}
-		\begin{aligned}
-
+		\begin{align*}
 			 x_{1} = y - \beta_{0}u \\
 			 x_{2} = y' - \beta_{1}u \\
 			... \\
 			 x_{n} = y^{(n-1)} - \beta_{n-1}u \\
-
-		\end{aligned}
-	\end{equation}
+		\end{align*}
 
 	W wyniku powyższej definicji zmiennych fazowych równanie wejścia-wyjścia
 	zostaje przekształcone do postaci
 
 	\begin{equation}
-
 		y^{(n)}(t) = \dot{x_{n}}(t) = -a_{1}x_{1}(t) - a_{2}x_{2}(t) + ... + a_{n}x_{n}(t) + \beta_{m}u(t) 
-
 	\end{equation}
 
-	Wówczas współczynniki \beta_{k} wynoszą
+	Wówczas współczynniki $\beta_{k}$ wynoszą
 
-	\begin{equation}
-		\begin{aligned}
-
+		\begin{align*}
 			 \beta_{1} = b_{n} \\
 			 \beta_{2} = b_{n-1} - a_{n-1}b_{0}\\
 			...
 			 \beta_{n} = b_{1} - a_{n-1}b_{n-1} - ... - a_{1}b_{1}\\
-
-		\end{aligned}
-	\end{equation}
+		\end{align*}
 
 	Taki układ ma wtedy postać taką że
 

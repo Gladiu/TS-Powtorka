@@ -1,13 +1,14 @@
+\documentclass{article}
 \author{Kasiński}
 \title{Wykład 3}
-\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 \usepackage{polski}
 \usepackage{float}
-\usepackage{graphics}
-\maketitle
+\usepackage{amsmath}
+\usepackage{graphicx}
 \begin{document}
+	\maketitle
 	\section{Podejście strukturalne do wyprowadzania modelu stanowego układu złożonego}
 
 		Złożony obiekt sterowania powstaje w wyniku połączenia wielu urządzeń wykonawczych/obróbczych lub
@@ -71,7 +72,7 @@
 			powiązanych przez warunki brzegowe.
 	\section{Przykład analizy}
 		\begin{figure}
-			\includegraphics{PrzykladDoAnalizy.png}
+			\includegraphics[height=0.3\textwidth]{PrzykladDoAnalizy.png}
 		\end{figure}
 		Powyższy przykład jest przykładem obiektu MIMO 2x2. 2x2 ponieważ ma dwa sygnały sterujące oraz dwa 
 		sygnały kontrolowane nazywane również sygnałami obserwowalnymi. Mamy zatem $ 2 \cdot 2 $ kanałów przepływu
@@ -104,7 +105,7 @@
 		\end{equation}
 
 		Warto odnotować w pierwszym równaniu wyjścia obecność tych zmiennych wektora stanu,
-		które opisują dynamikę kanału "2 \rightarrow 2". Świadczy to o występowaniu interakcji między
+		które opisują dynamikę kanału $2 \rightarrow 2$. Świadczy to o występowaniu interakcji między
 		kanałami głównymi w części wyjściowej urządzenia, co
 		ujawnia się na schemacie blokowym. Takie interakcje to są właśnie sprzężenia skrośne
 		Co ciekawe, samo równanie stanu części autonomicznej jest liniowe, macierz A nie zawiera żadnych
@@ -156,9 +157,9 @@
 			odpowiadającym liczbie wyjść wielowymiarowego układu nieliniowego O składowych
 			funkcji wektorowych f i h zakładamy, że są to funkcje rzeczywiste, analityczne
 			(tzn. rozwijalne w szereg Taylora względem swoich argumentów).
-	\section{Dygresja na temat poziomu systemowego w układach sterowania w przemyśle)
+	\section{Dygresja na temat poziomu systemowego w układach sterowania w przemyśle}
 		\begin{figure}
-			\includegraphics{PoziomSystemowy.png}
+			\includegraphics[height=0.3\textwidth]{PoziomSystemowy.png}
 		\end{figure}
 		Przy produkcji fabrycznej realizowanej w instalacjach przemysłowych, poszczególne
 		urządzenia przetwórcze (obiekty sterowania) połączone są ze sobą
@@ -184,7 +185,6 @@
 		wad wykrytych w późniejszej fazie procesu produkcyjnego. Wymienione topologie
 		połączeń odzwierciedlone są na schematach blokowych produkcyjnej, na których
 		bloki reprezentują poszczególne urządzenia produkcyjne (patrz powyższy rysunek).
-
 		Z punktu widzenia teorii sterowania strumienie masowe i energetyczne uczestniczące
 		w procesie są postrzegane poprzez sygnały odzwierciedlające możliwości ich
 		modulowania (dawkowania), czyli sygnały wejściowe poszczególnych procesów
