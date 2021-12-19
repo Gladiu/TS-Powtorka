@@ -11,7 +11,8 @@
 	\maketitle
 	\section{Podejście strukturalne do wyprowadzania modelu stanowego układu złożonego}
 
-		Złożony obiekt sterowania powstaje w wyniku połączenia wielu urządzeń wykonawczych/obróbczych lub
+		Złożony obiekt sterowania powstaje w wyniku połączenia wielu urządzeń
+		wykonawczych/obróbczych lub
 		innych mniejszych obiektów  w sieć przepływu sygnałów charakteryzujących wzajemne
 		oddziaływania między tymi urządzeniami.
 		Same połączone urządzenia, które na schemacie funkcjonalnym są
@@ -157,48 +158,44 @@
 			odpowiadającym liczbie wyjść wielowymiarowego układu nieliniowego O składowych
 			funkcji wektorowych f i h zakładamy, że są to funkcje rzeczywiste, analityczne
 			(tzn. rozwijalne w szereg Taylora względem swoich argumentów).
-	\section{Dygresja na temat poziomu systemowego w układach sterowania w przemyśle}
+	\section{Przepływ oraz jego rodzaje w przemyśle}
 		\begin{figure}
 			\includegraphics[height=0.3\textwidth]{PoziomSystemowy.png}
 		\end{figure}
 		Przy produkcji fabrycznej realizowanej w instalacjach przemysłowych, poszczególne
-		urządzenia przetwórcze (obiekty sterowania) połączone są ze sobą
-		w system
-		przetwórczy (system wytwarzania), w sposób wynikający z technologii produkcji lub
-		ze zgodnej z logiką procesu produkcyjnego sekwencji przetwarzania materii/energii
-		(np. przemian fazowych surowców lub medium nośnego, reakcji chemicznych
-		pomiędzy substratami, operacji obróbki półproduktów, itp.).
+		urządzenia przetwórcze, czyli nasze obiekty sterowania, połączone są ze sobą
+		w system przetwórczy.
+		Sposób łączenia obiektów wynika z technologii produkcji lub sposobem przetwarzania
+		materii bądź energii.
 
 		W instalacjach przemysłowych mamy do czynienia z przepływami strumieni materii
-		(surowców, półproduktów) lub energii, doprowadzanej celem wywołania reakcji
-		chemicznej lub przemiany fazowej, albo wyprowadzanej (odprowadzanej) np. w
-		przypadku produkcji różnej postaci energii użytkowej lub dla ustabilizowania reakcji
-		egzotermicznych, schłodzenia produktów, medium, itp.
+		będącej surowcami bądź innymi półproduktami.
+		Przepływać może też energia doprowadzana w celu wywołania reakcji chemicznej lub
+		przemiany fazowej.
 
-		Przepływy mogą mieć charakter szeregowy (kaskadowy, sekwencyjny) np. na linii
-		produkcyjnej lub współbieżny (równoległy) w przypadku występowania tzw. węzłów
-		(np. w reaktorach wieloskładnikowych, gniazdach obróbczych). Proces może się
+		Przepływy mogą mieć charakter szeregowy, nazywany też kaskadowym bądź sekwencyjnym
+		Taki przepływ ma miejsce na przykład na linii produkcyjnej.
+		Przepływ może być również równoległy w przypadku występowania tzw. węzłów
+		Proces może się
 		również charakteryzować oddziaływaniami skrośnymi pomiędzy poszczególnymi
-		potokami (np. dostarczanie zmodyfikowanego surowca lub półproduktu na linię
-		wyrobu, a w szczególności oddziaływaniami zwrotnymi (cofnięcie
-		prefabrykatu/produktu/wyrobu do wcześniejszej fazy przetwarzania, celem usunięcia
-		wad wykrytych w późniejszej fazie procesu produkcyjnego. Wymienione topologie
-		połączeń odzwierciedlone są na schematach blokowych produkcyjnej, na których
+		potokami w przypadku dostarczania zmodyfikowanego surowca lub półproduktu na linię
+		wyrobu 
+		Oddziaływania zwrotne są również oddziaływaniami wskrośnymi, te mają miejsce 
+		na przykład przy cofnięciu
+		produktu do wcześniejszej fazy przetwarzania, celem usunięcia
+		wad wykrytych w późniejszej fazie procesu produkcyjnego.
+		Wymienione sposoby połączeń przepływów odzwierciedlone są na schematach blokowych produkcyjnej, na których
 		bloki reprezentują poszczególne urządzenia produkcyjne (patrz powyższy rysunek).
+
 		Z punktu widzenia teorii sterowania strumienie masowe i energetyczne uczestniczące
-		w procesie są postrzegane poprzez sygnały odzwierciedlające możliwości ich
-		modulowania (dawkowania), czyli sygnały wejściowe poszczególnych procesów
-		(podprocesów, ogniw łańcucha) oraz sygnały wyjściowe charakteryzujące parametry
-		jakościowe produktów (półproduktów) oraz ilościowy wydatek produkcji. Na poziomie
-		procesu są to sygnały główne. Oprócz tego występują w modelu dynamiki procesu
-		inne sygnały klasyfikowane jako sygnały sterujące (ale nie główne) i inne sygnały
-		wyjściowe (również nie główne).
+		w procesie są postrzegane jako sygnały, które są modulowane tak aby odzwierciedlały
+		zmiany w procesach produkcyjnych.
 
 		Urządzenia połączone w system same w sobie mogą być przedmiotem sterowania na
 		poziomie lokalnym (operatora urządzenia), albo pracować jako urządzenia
-		autonomiczne (sterowane automatycznie, a nawet adaptacyjnie). Mogą także
+		autonomiczne sterowane automatycznie. Mogą także
 		podlegać sterowaniu scentralizowanemu na poziomie całego procesu i wówczas ich
-		pomocnicze sygnały wejściowe (symbolicznie zaznaczone na schemacie blokowym)
+		pomocnicze sygnały wejściowe
 		stają się kolejnymi elementami wektora sterowań procesu, podobnie jak wyjścia
 		poszczególnych urządzeń - elementami wektora wyjść procesu. I występują jawnie w
 		stanowym modelu ogólnym całego procesu.
