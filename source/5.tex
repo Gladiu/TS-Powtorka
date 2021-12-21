@@ -102,7 +102,7 @@
 		\end{equation}
 		W tym wypadku macierz wyjścia oraz macierz przeniesienia wyglądają następująco
 		\begin{align*}
-			C = \frac{\delta h}{\delta x^T} //
+			C = \frac{\delta h}{\delta x^T} \\
 			D = \frac{\delta h}{\delta u^T} 
 		\end{align*}
 		Macierze te są oczywiście obliczone w punkcie 
@@ -143,5 +143,100 @@
 		Transmitancję $\underline{G(s)}$ definiujemy w następujący sposób:
 		\begin{equation}
 			Y(s) = \underline{G(s)}U(s)
+		\end{equation}
+		Gdzie $U(s)$ oraz $Y(s)$ są wektorami transformat Laplace'a wektora sygnałów
+		wejściowych i wektora sygnałów wyjściowych. Macierz $\underline{G(s)}$
+		ma rozmiary zależne od wejść oraz wyjść sygnałów, a jej elementy są ilorazami
+		wielomianów zmiennej zespolonej $s$.
+
+		Stosując obustronne przekształcenie Laplace'a do równań stanu i równań wyjścia
+		modelu zlinearyzowanego otrzymujemy
+		\begin{align*}
+			sX(s)-x(0) = AX(s) + BU(s) \\ 
+			Y(s) = CX(s) + DU(s)
+		\end{align*}
+		Z założeń stransmitancji przyjmujemy zerowe warunki początkowe, stąd mamy
+		\begin{equation}
+			sX(s) - A X(s) = BU(s)
+		\end{equation}
+		Wyciągając $X(s)$ przed nawias otrzymujemy
+		\begin{equation}
+			[sI-A]X(s) = BU(s)
+		\end{equation}
+		Po dalszych przeniesieniach możemy orzymać $x(t)$
+		\begin{equation}
+			x(t) = \mathcal{L}^{-1}\{ [sI-A]^{-1}BU(s)\}
+		\end{equation}
+		$x(t)$ jest częścią wymuszoną, a dokładniej jest wymuszoną przez u(t).
+
+		Warto tutaj zauważyć, że nieosobliwy model liniowy ma w przestrzeni czasu 
+		tylko jeden punkt stacjonarny mędący początkiem układu, czyli $x=0$.
+		Jest to logiczne jeśli przypomnimy sobie, że $Ax=0$ ma jedno roziwiązanie
+		gdy $det(A) \neq 0$ czyli $x=0$
+
+		Gdy macierz $A$ jest osobliwa możemy powiedzieć że charakteryzuje się defektem rzędu.
+		Wtedy rozwiązaniem równania $Ax=0$ jest dowolny niezerowy wektor należący do 
+		jądra macierzy A.
+		
+		Wracając do równania
+		\begin{equation}
+			Y(s) = \{C[sI-A]^{-1}B+D\}U(s)
+		\end{equation}
+		Zgodnie z definicją otrzymujemy $\underline{G(s)}$ 
+		\begin{equation}
+			\underline{G(s)} = C[sI-A]^{-1}B+D
+		\end{equation}
+		Macierz odpowiedzi impulsowych poszczególnych kanałów łączących wejścia z
+		wyjściami jest równa:
+		\begin{equation}
+			g_{ij}(t) = \mathcal{L}^{-1}\{ \underline{G(s)} \}
+		\end{equation}
+		gdzie $i$ jest indeksem wejścia a $j$ indeksem wyjścia
+	\subsection{Rozwiązywanie równań stanu}
+		W poniższych równaniach będzie wyprowadzony spobób aby otrzymać 
+		stan obiektu w dziedzinie czasu posiadając model liniowy obiektu.
+		\begin{align*}
+			\dot{x}(t) = Ax(t)+Bu(t) \\
+			sX(s) - x(0) = AX(s) + BU(s) \\
+			X(s) = [sI-A]^{-1}x(0) + [sI-A]^{-1}BU(s) \\
+			x(t) = \mathcal{L}^{-1}\{ [sI-A]^{-1}x(0) \} + \mathcal{L}^{-1}\{ [sI-A]^{-1}BU(s) \} 
+		\end{align*}
+		Pierwszy składnik ma oryginał transformaty równy $e^{At}x(0)$ i przedstawia przebieg
+		trajektorii stanu układu autonomicznego, wynikacjyący z niezerowego stanu początkowego.
+		Druga transformata odwrotna wymaga obliczenia oryginału iloczynu dwóch macierzowych funkcji zespolonych: $[sI-A]^{-1}$ oraz $BU(s)$. Iloczynowi odpowiada oryginał w postaci całki
+		splotowej
+		\begin{align*}
+			\mathcal{L}^{-1}\{ [sI-A]^{-1}BU(s) \} \\
+			e^{At}\ast Bu(t) \\
+			\int^{\infty}_0e^{A(t-\tau)}Bu(\tau)d\tau
+		\end{align*}
+		Powyższa część równania stanu jest tą częścią która wymusza sygnały wejściowe
+		na obiekcie. Dopiero znając przebieg tych sygnałów jesteśmy w stanie 
+		wyznaczyć 
+		\begin{equation}
+			x(t) = e^{At}x(0)+\int^t_0e^{A(t-\tau)}Bu(\tau)d\tau
+		\end{equation}
+		gdzie $t$ oznacza chwilę bierzącą, a $\tau$ oznacza chwilę z przeszłości.
+		Funkcja $e^{A(t-\tau)}$ jest nazywana funkcją "zapominania" efektów sterowania
+		z przeszłości.
+		Funkcję $e^{At}$ nazywamy macierzą tranzycji stanu liniowego stacjonarnego układu o
+		macierzy stanu $A$.
+	\subsection{Dygresja o macierzowej funkcji wykładniczej}
+		Skalarna funkcja wykładnicza $e^x$ jest definiowana jako granica szeregu
+		nieskończonego
+		\begin{equation}
+			e^x = \sum^{\infty}_{n=0}\frac{1}{n!}x^n
+		\end{equation}
+		Wnioskując z tego możemy otrzymać że funkcja wykładnicza $e^{At}$ będzie wyglądała następująco
+		\begin{equation}
+			e^{At} = \sum^{n-1}_{k=0}\frac{1}{k!}(At)^k = I+\frac{At}{1!} ...
+		\end{equation}
+		Na mocy twierdzenia Cayleya-Hamiltona rozwinięcie to jest skończone.
+		Warto zauważyć tutaj że n oznacza rząd macierzy A.
+
+		Dla czasów niewiele późniejsych niż chwila początkowa, dobrym przybliżeniem
+		macierzowej funkcji wykładniczej jest jej aproksymacja pierwszego rzędu
+		\begin{equation}
+			I+A\Delta t
 		\end{equation}
 \end{document}
