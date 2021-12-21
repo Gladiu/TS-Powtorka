@@ -9,5 +9,74 @@
 \usepackage{amsmath}
 \begin{document}
 	\maketitle
+	\section{Linearyzacja modelu w otoczeniu punktu stacjonarnego}
+	\subsection{Wstęp}
+	Linearyzację modelu ogólnego przeprowadzimy dla otoczenia wybranego punktu
+	stacjonarnego $x_s^i$. Dla przejrzystości i bez utraty ogólności rozważań, w następujących
+	dalej wzorach, pomińmy indeks górny $i$, wskazujący konkretny punkt stacjonarny oraz
+	indeks dolny $s$ informujący, że chodzi o punkt stacjonarny jako punkt referencyjny .
+	Zakładamy, że w tym punkcie u(0) = 0. Używany w dalszej części symbol normy oznacza
+	normę Euklidesa oznaczonej wzorem
+	\begin{equation}
+		||P|| = \sqrt{P.x^2 + P.y^2}
+	\end{equation}
 
+	Otoczenie tego punktu możemy sobie wyobrazić jako n-wymiarową hiperkulę o środku $x$
+	oraz o małym promieniu $\varepsilon$ gdzie $||\varepsilon|| << 1$.
+	To mniej więcej oznacza, że otoczenie punktu jest nie dalej niż $\varepsilon$ od punktu $x$.
+	
+	Dla jasności wektor prędkości zmian stanu będziemy nazywać momentum.
+	Do linearyzacji modelu w otoczeniu punktu stacjonarnego posłużymy się szeregiem Taylora.
+	\begin{equation}
+		\dot{z}(t) = f(z) = \sum_{n=0}^{\infty}\frac{f^{(n)}}{n!}(z-x)^n
+	\end{equation}
+	gdzie: $z$ oznacza dowolny wektor wewnątrz hiperkuli oznaczonej przez $B_n(x, \varepsilon)$, a 
+	$(z-x)$ oznacza odchylenie od punktu stacjonarnego takie, że $||z-x||<\varepsilon$.
+	$f^{(n)}$ oznacza dla różnych wartości $n$ różne rzeczy.
+	\begin{itemize}
+		\item dla $n=0$ $f^{(n)}$ oznacza wartość momentum w punkcie stacjonarnym.
+			Z definicji ta wartość jest wektorem zerowym.
+		\item dla $n=1$ $f^{(n)}$ oznacza Jakobian $J(x)$ wektorowego momentum, który dla 
+			punktu stacjonarnego wynosi $\frac{\delta f}{\delta z^T}$
+		\item dla $n=2$ $f^{(n)}$ oznacza formę kwadratową $(z-x)^TH(x)(z-x)$
+			gdzie $H(x)$ oznacza Hesjan $\frac{\delta^2f}{\delta z^t \delta z}$
+		\item dla $n>2$ są to formy tensorowe wyższych rzędów
+	\end{itemize}
+	Z założonej analityczności
+	$f$ wynika, że normy tensorów, w tym Jacobianu i Hessjanu, 
+	(wartości wyznaczników) są skończone. Oznaczmy je odpowiednio przez $J$ i $H$.
+	\subsection{Obcięcie rozwinięcia i majoryzacja}
+	Ograniczmy rozwinięcie w szereg Taylora do trzech pierwszych wyrazów i przejdźmy do
+	obliczenia normy po obu stronach równania:
+	\begin{equation}
+		||\dot{z}(t)||=||f(z)|| = ||f(x) + J(x)(z-x) + (z-x)^TH(x)(z-x)||
+	\end{equation}
+
+	\begin{equation}
+		||f(x) + J(x)(z-x) + (z-x)^TH(x)(z-x)|| \leq ||f(x)|| + J||(z-x)|| + ||(z-x)^T||H||(z-x)||
+	\end{equation}
+	co oznacza 
+	\begin{equation}
+		||\dot{z}(t)|| \leq J \varepsilon + H \varepsilon 
+	\end{equation}
+	$J$ oraz $H$ są skończone oraz prawdziwe są nierówności
+	\begin{equation}
+		... \leq \varepsilon^3 \leq \varepsilon^2 \leq \varepsilon \leq 1
+	\end{equation}
+	Natomiast $f(x)$ w punkcie stacjonarnym jest wektorem zerowym. Na tej podstawie możemy
+	wywnioskować, że dla oszacowania wartośći wektora prędkośći zmian stanu, nazywanym również wektorem momentum, możemy ograniczyć się do zlinearyzowanego modelu
+	\begin{equation}
+		\dot{z}(t)=Az(t)
+	\end{equation}
+	gdzie $A=J$.
+	$A$ jest macierzą stanu o stałych elementach. Dla modelu zlinearyzowanego jest ona równa
+	Jacobianu funkcji momentum obliczonemu w punkcie $x$.
+	$z(t)$ jest wektorem stanu układu zlinearyzowanego, pozostającym hiperkuli.Dla modelu zlinearyzowanego jest ona równa
+	Jacobianu funkcji momentum obliczonemu w punkcie $x$.
+	$z(t)$ jest wektorem stanu układu zlinearyzowanego, pozostającym hiperkuli.
+	Dla ułatwienia rozważań można przesunąć równolegle układ współrzędnych stanu w
+	taki sposób, by początek przesuniętego układu przypadał w wybranym punkcie
+	stacjonarnym $x$, Wówczas odchylenia od punktu stacjonarnego $(z – x)$ można uznać za
+	współrzędne stanu wyrażone w nowym układzie współrzędnych, co upraszcza powyższe
+	wzory rozwinięcia w szereg.
 \end{document}
