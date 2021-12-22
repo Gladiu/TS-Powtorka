@@ -1,0 +1,143 @@
+\author{Kasiński}
+\title{Wykład 6}
+\documentclass{article}
+\usepackage[margin=1.4cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{polski}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\begin{document}
+	\maketitle
+	\section{Wprowadzenie}
+		Dyskretne w czasie zmiany wartości sygnałów sterujących oraz dyskretne w czasie
+		odczytywanie wartości sygnałów mają miejsce w komputerowych systemach bezpośredniego
+		sterowania cyfrowego. Mowa tutaj o DDC – od ang. Direct Digital Control
+
+		W przypadku DDC, o chwili modyfikacji wartości sygnału sterującego 
+		decyduje zegar czasu rzeczywistego. Zegar ten synchronizujący proces próbkowania
+		sygnałów w przypadku użycia przetworników A/C, oraz proces zmian wartości sygnałów
+		sterujących w przypadku użycia przetworników C/A.
+
+		Dla uproszczenia pomijamy drugi aspekt digitalizacji, czyli kwantowanie wartości
+		sygnałów, zakładając, że rozdzielczość używanych w systemie przetworników A/C i C/A
+		jest na tyle wysoka, że efekty związane z szumem kwantowania „w pionie” są pomijalne
+		Np. liniowy przetwornik 12-bitowy dzieli zakres zmienności sygnału np. <-10, +10> V
+		na 4096 części, co daje amplitudę szumu zaokrąglenia wartosci nie przekraczającą 5mV,
+		na ogół znacznie mniejszą niż amplituda szumów generowanych prze inne źródła, np.
+		szumy fluktuacji termicznej.
+
+		Zakładamy, że częstotliwość próbkowania w systemie została dobrana zgodnie z
+		kryterium Nyquista, na podstawie wyznaczonej częstotliwości granicznej widma,
+		ustalonej dla całego zbioru sygnałów w systemie.
+		Próbkowanie w układach rzeczywistych odbywa się z nadmiarem – częstotliwość
+		próbkowania jest zazwyczaj znaczną wielokrotnością
+		(rzędu 20) częstotliwości
+		granicznej, tak więc można założyć, że próbkowanie na osi czasu nie prowadzi do utraty
+		informacji o procesie, a cyfrowy sposób sterowania nie wprowadza do obiektu istotnych
+		efektów szumowych związanych z digitalizacją sygnałów sterujących.
+
+		Pewien problem stanowi zróżnicowana dynamika obiektu sterowania, w której możemy
+		wyodrębnić podsystemy wolnozmienne (o dużych wartościach stałych czasowych i
+		okresów drgań własnych tworzących je elementów) oraz podsystemy szybkozmienne.
+		Możliwe jest wówczas stosowanie odrębnych częstotliwości próbkowania dla tychpodsystemów,
+		dostosowanych do każdej z dynamik. Mówimy wówczas, że sterowanie
+		przebiega w dwóch skalach czasu, albo w dwóch warstwach.
+		
+		Należy zadbać o synchronizację algorytmów sterujących w poszczególnych warstwach,
+		zwłaszcza wtedy, gdy charakterystyki widmowe podsystemów obu klas znacząco na
+		siebie nachodzą. Można dokonać dalej idącej stratyfikacji systemu na warstwy 
+		o ile ma to uzasadnienie w postaci jeszcze bardziej zróżnicowanej struktury
+		dynamicznej obiektu sterowania.
+	\section{Kwestia niestacjonarności obiektów sterowania}
+		W dotychczas rozpatrywanych modelach zakładano stałość w czasie parametrów. Są
+		jednak sytuacje, gdy urządzenia ulegają widocznemu w czasie zużyciu lub podlegają
+		szybkiemu starzeniu. W dotychczas analizowanych modelach czynnik ten nie był
+		uwzględniany. Jedynymi zmiennymi w czasie elementami modelu były sygnały.
+
+		Aby móc analizować również obiekty, których właściwości są w istotny sposób zmienne
+		w czasie wprowadza się rozszerzenie parametrycznych modeli w przestrzeni stanu
+		poprzez uwzględnienie również zmienności parametrów modelu w czasie. Cechą tej
+		zmienności jest niska dynamika (procesy starzenia, czy zużycia są stosunkowo wolne w
+		porównaniu z dynamiką zmian stanu pod wpływem sygnałów sterujących), co
+		odpowiada warunkom rzeczywistym. Ponadto funkcje zużycia/starzenia są stosunkowo
+		proste, przeważnie monotoniczne. Dlatego w systemach sterowania procesy te można
+		uwzględniać w dodatkowej warstwie super-wolnozmiennej, odpowiadającej za
+		aktualizację modeli wykorzystywanych do sterowania.
+		
+		Równania stanu i wyjścia nieliniowego obiektu niestacjonarnego zapisujemy w postaci
+		ogólnej:
+		\begin{align*}
+			\dot{x}(t) = f(x(t), u(t), t) //
+			y(t) = h(x,u,t)
+		\end{align*}
+		gdzie argument t oznacza jawną zależność funkcji f, h lub ich parametrów od czasu.
+		Oczywiście, niestacjonarność dodatkowo podnosi stopień trudności rozwiązania
+		nieliniowych równań stanu.
+		\begin{align*}
+			\dot{x}(t) = A(t) x(t) + B(t)u(t) //
+			y(t) = C(t) x(t) + D(t) u(t)
+		\end{align*}
+		gdzie niestacjonarność wbudowno w parametry modelu
+		Liniowe równanie układu niestacjonarnego można rozwiązać poprzez całkowanie.
+		Rozwiązanie ma wtedy postać:
+		\begin{equation}
+			x(t) = K(t, 0)x(0) + \int^t_0K(t,\tau)B(\tau)u(\tau)d\tau
+		\end{equation}
+		Gdzie $K(t,\tau)$ jest nieosobliwą macierzą Cauchiego wymiarach n na n, stanowiącą
+		rozwiązanie liniowego, jednorodnego, macierzowego równania różniczkowego o postaci:
+		\begin{equation}
+			\dot{K}(t, t_0) = A(t)K(t,t_0)
+		\end{equation}
+		Przy warunku początkowym $K(t_0, t_0) = I$
+	\section{Modele dyskretne obiektów z czasem ciągłym}
+		Wobec tego, że decyzje sterujące oraz pomiary są
+		podejmowane w dyskretnych chwilach czasowych, z odstępem w czasie zwanym
+		okresem próbkowania $Tp$, naturalne jest posługiwaniem się do opisu obiektu modelami
+		dyskretnymi w czasie, wykorzystywanymi następnie w algorytmach sterowania. W
+		szczególności dotyczy to modeli w przestrzeni stanu.
+
+		Istnieją dwa podejścia do dyskretyzacji: aproksymacyjne i dokładne. Podejście
+		aproksymacyjne polega na zastąpieniu chwilowej prędkości zmian stanu po lewej stronie
+		równania, ilorazem różnicowym przyrostu wektora stanu opisanym jako $\Delta x$
+		i skończonego odcinka czasu w którym ten przyrost nastąpił $T_p$. Prowadzi to do
+		przybliżonego schematu całkowania Eulera.
+		\begin{equation}
+			\frac{\Delta x}{T_p}
+		\end{equation}
+		Taka aproksymacyja skutkuje kumulacją błędu całkowania
+		wraz ze wzrostem liczby kroków procedury rekurencyjnej. Jego zaletą jest możliwość
+		stosowania go, gdy nie potrafimy uzyskać rozwiązania równania stanu w jawnej postaci.
+		Brak możliwośći uzyskania rozwiązania równań stanu w jawnej postaci ma miejsce w
+		przeważającej liczbie modeli nieliniowych.
+		\begin{verbatim}
+			W tym miejscu na wykładzie jest wyprowadzany euler w tył
+			Przejdę od razu do wniosków
+		\end{verbatim}
+		
+		\begin{align*}
+			x_k = x_{k-1} + T_pf(x_{k-1}, u_{k-1}) //
+			... //
+			x_k \approx [I + AT_p] x_{k-1} + B u_{k-1}
+		\end{align*}
+		Warto zauważyć, że macierz stanu modelu dyskretnego jest identyczna z pierwszymi dwoma
+		wyrazami rozwinięcia w szereg Taylora macierzowej funkcji wykładniczej
+		\begin{equation}
+			e^{AT_p} \approx I +A^T_p .
+		\end{equation}
+		A więc zastąpienie pochodnej ilorazem różnicowym ma podobne skutki jak ograniczenie
+		rozwinięcia macierzy tranzycji stanu do dwóch pierwszych wyrazów jej rozwinięcia w
+		szereg Taylora.
+		(Na koniec poprzedniego wykładu te równania są wyprowadzone)
+
+		Przy tej metodzie dyskretyzacji macierz sterowań nie ulega modyfikacji, jest taka sama
+		jak w modelu z czasem ciągłym. Natomiast macierz stanu modelu dyskretnego ma
+		składnik zależny od okresu próbkowania, co wpływa na rozkład jej wartości własnych,
+		tożsamych z biegunami dyskretnej transmitancji macierzowej, o określonym rozkładzie
+		na płaszczyźnie zespolonej "z". Niewłaściwy dobór okresu próbkowania może zatem
+		doprowadzić do utraty stabilności modelu dyskretnego – transmitancji Laurenta, czyli
+		wyjścia jej biegunów poza okrąg jednostkowy, pomimo że model z czasem ciągłym był
+		stabilny.
+
+\end{document}
