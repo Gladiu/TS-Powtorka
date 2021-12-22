@@ -139,5 +139,57 @@
 		doprowadzić do utraty stabilności modelu dyskretnego – transmitancji Laurenta, czyli
 		wyjścia jej biegunów poza okrąg jednostkowy, pomimo że model z czasem ciągłym był
 		stabilny.
+	\section{Dyskretyzacja dokładna}
+		Metoda dokładna polega na dyskretyzacji rozwiązania równań stanu. Można ją
+		zastosować jedynie wówczas, gdy rozwiązanie ma jawną postać. Jej zaletą jest brak
+		kumulacyjnego błędu całkowania przybliżonego, stąd jej nazwa. Można ja zastosować w
+		przypadku gdy model stanowy układu z czasem ciągłym ma liniowe równanie stanu.
+		Tego warunku nie musi spełniać równanie wyjścia. Rozwiązanie liniowego równania
+		stanu ma postać:
+		\begin{equation}
+			x(t) = e^{At}x(0)+\int^t_0e^{A(t-\tau)}Bu(\tau)d\tau
+		\end{equation}
+		Przyjmując jako warunek początkowy $x_k$ i całkując w granicach $[kT_p , (k+1)T_p]$
+		otrzymujemy równanie rekurencyjne przejścia stanu dla pojedynczego okresu
+		próbkowania. Należy też uwzględnić, że w trakcie tego okresu wektor sygnałów sterujących 
+		pozostaje stały, równy $u_k$. Sygnał ten zgodnie z mechanizmem bezpośredniego
+		sterowania cyfrowego sygnały sterujące mają charakter schodkowy, o szerokości stopnia
+		równej $T_p$.
+		\begin{align*}
+			x_{k+1} = e^{AT_p}x_k+\int^T_p_0e^{A(T_p-\tau)}Bu_kd\tau //
+			x_{k+1} = e^{AT_p}x_k+\int^T_p_0e^{A(T_p-\tau)}d\tauBu_k
+		\end{align*}
+		Po scałkowaniu otrzymujemy
+		\begin{equation}
+			x_{k+1} = A^*x_k+B^*U_k
+		\end{equation}
+		Gdzie
+		\begin{itemize}
+			\item $A^* = e^{AT_p}
+			\item $B^* = e^{AT_p}\frac{B}{T_p}
+		\end{itemize}
+		Macierze $C^*$ oraz $D^*$ nie ulegają zmianie przy dyskretyzcji
 
+		Odtąd nie będziemy stosować gwiazdek w oznaczeniach macierzy modelu dyskretnego
+		uzyskanego metodą dokładną, ale będziemy każdorazowo zaznaczać jaką metodą został
+		uzyskany konkretny model. Wpływ wartości $T_p$ na stabilność modelu dyskretnego jest
+		nadal istotny, jest jednak bardziej złożony niż w przypadku przybliżonego modelu
+		dyskretnego. Charakterystyczna jest też zależność odwrotnie proporcjonalna elementów
+		macierzy sterowań modelu dyskretnego (macierzy wzmocnień sygnałów sterujących)
+		od okresu próbkowania $T_p$, której sens jest następujący: przy tych samych przyrostach
+		sygnałów sterujących, efekt sterowania jest tym
+		słabszy im dłuższy jest okres próbkowania. Dzieje się tak ponieważ w czasie rzeczywistym
+		, sterowanie jest
+		korygowane rzadziej z uwagi na rzadsze zamykanie pętli sprzężenia zwrotnego w
+		obwodach regulacji.
+		\subsection{Dygresja o czymś co było wcześniej udowodnione (?)}
+			Analogiczne rozumowanie prowadzące do wyprowadzenia dyskretnego modelu
+			dokładnego, można przeprowadzić w odniesieniu do liniowych modeli niestacjonarnych
+			z czasem ciągłym. Macierze modelu dyskretnego uzyskanego metodą dokładną (przez
+			dyskretyzację jawnego rozwiązania równań stanu) będą w oczywisty sposób związane z
+			indeksami próbek, odzwierciedlając w ten sposób niestacjonarność modelu):
+			\begin{equation}
+				x_{k+1} = Ax_k + Bu_k
+			\end{equation}
+			Gdzie $A = K[t_{k+1}, t_k]$ natomiast $B = \int_{t_k}^{t_k+T_p}K(t_k+T_p,\tau)B(\tau)d\tau$
 \end{document}
