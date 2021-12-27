@@ -1,0 +1,316 @@
+\author{Kasiński}
+\title{Wykład 7}
+\documentclass{article}
+\usepackage[margin=1.4cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{polski}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\begin{document}
+	\maketitle
+	\section{Porównanie metod linearyzacji}
+		\subsection{Przykład 1}
+			Rozważmy system dynamiczny opisany nieliniowymi równaniami stanu
+			\begin{align*}
+				\dot{x_1} = x_1 cos(x_2) + (x_2)^2 \\
+				\dot{x_2} = x_1 sin(x_2) + x_1 + x_2 + (x_1)^2 
+			\end{align*}
+			Jego nieliniowość jest istotna. Ma charakter dynamiczny, czyli istnieje zależność
+			prędkości zmian stanu od
+			funkcji okresowych oraz wyższych potęg zmiennych stanu. Oba podsystemy są nieliniowo
+			skrośnie posprzęgane. Obecność funkcji okresowych powoduje
+			występowanie przeliczalnej liczby izolowanych punktów stacjonarnych. Model
+			nieliniowy nie jest odwracalny, czyli nie istnieje funkcja $f^{-1}(x)$,
+			odwrotna do $f(x)$
+			zatem możliwa jest jedynie jego przybliżona linearyzacja . Zbadamy jego właściwości w
+			otoczeniu punktu $x = [ 0 \space 0 ]^T $
+			
+			Łatwo sprawdzić że punkt $x = [ 0 \space  0 ]^T$  jest punktem stacjonarmy układu, czyli
+			dla tego punktu prawdziwa jest rówość $\dot{x} = 0$. Taki punkt jest już podstawą
+			do linearyzacji lokalnej.
+
+			Podejście bezpośrednie polega na "zlinearyzowania" składników prawych stron zakładając, że
+			pozostajemy we wnętrzu hiperkuli o małym promieniu $\varepsilon$. Pomijamy „małe” wyższych
+			rzędów. I tak: $cos \varepsilon \approx 1$, a więc $x_1 cos \varepsilon \approx x1$
+			, $(x_2)^2 = \varepsilon \cdot 2$, $sin \varepsilon \approx 0$, a więc $x1 sin \varepsilon \approx 0$, $(x_1)^2 = \varepsilon \cdot 2$ .
+			Po pominięciu nieistotnych składników otrzymujemy zlinearyzowany model postaci:
+			\begin{align*}
+				\dot{x_1} = x_1 \\
+				\dot{x_2} = x_1 + x_2 
+			\end{align*}
+			Z powyższych równań otrzymujemy macierz A
+			\begin{equation}
+				A = 
+				\begin{pmatrix}
+					1 & 0 \\
+					1 & 1 
+				\end{pmatrix}
+			\end{equation}
+
+			Możemy też zastosować bardziej uniwersalną metodę, czyli metodę Jakobianową
+
+			\begin{equation}
+				\frac{df}{dx^T}
+				\begin{pmatrix}
+					cos(x_2) & 2x_2 - x_1 sin(x_1) \\
+					2x_1 + sin(x_2) + 1 & 1 + x_1 cos(x_2)
+				\end{pmatrix}
+			\end{equation}
+			Podstawiając $x = [ 0 \space 0 ]^T$ do Jakobianu otrzymujemy macierz $A$ taką jak wcześniej
+			\begin{equation}
+				A = 
+				\begin{pmatrix}
+					1 & 0 \\
+					1 & 1 
+				\end{pmatrix}
+			\end{equation}
+		\subsection{Przykład 2}
+			Równanie wejścia wyjścia obiektu sterowania ma postać
+			\begin{equation}
+				\ddot{x} + 4(\dot{x})^2 + x^3u = 0
+			\end{equation}
+			Będziemy linearyzować powyższe równanie wokół punktu stacjonarnego $x = 0$
+			Linearyzując ją metodą bezpośrednią, czyli pomijając i szacując składniki
+			otrzymujemy 
+			\begin{equation}
+				\ddot{x} + u = 0
+			\end{equation}
+			Z powyższego równania otrzymujemy elegancki model w przestrzeni stanu
+			\begin{align*}
+				\dot{x_1} = x_2 \\
+				\dot{x_2} = -u \\
+			\end{align*}
+			Skąd mamy równie eleganckie macierze 
+			\begin{equation}
+				A = 
+				\begin{pmatrix}
+					0 & 1 \\
+					0 & 0 
+				\end{pmatrix}
+			\end{equation}
+			oraz
+			\begin{equation}
+				B = 
+				\begin{pmatrix}
+					0 \\
+					-1 
+				\end{pmatrix}
+			\end{equation}
+			Astatyzm – cecha wykazywana przez obiekty i układy z co najmniej jednym
+			pierwiastkiem równania charakterystycznego o części rzeczywistej równej
+			zero. W zależności od krotności tego pierwiastka można mówić o astatyzmie
+			n-tego rzędu.
+			\newline
+			\newline
+			Model zlinearyzowany wskazuje na lokalną obecność astatyzmu drugiego rzędu 
+			w otoczeniu punktu stacjonarnego $x = [0 0]^T$
+			Równanie opisuje ruch ciała o masie m=1, w środowisku silnych (w kwadracie) oporów
+			ruchu pod wpływem rozciągania (u jest odkształceniem) nieliniowej sprężyny.
+			Sygnałem wyjściowym jest przesunięcie środka masy układu. Linearyzacja metodą
+			jacobianową prowadzi do identycznego modelu lokalnego.
+	\section{Liniowe modele kanoniczne w przestrzeni stanu}
+		W przypadku obiektu typu SISO, definiując zmienne stanu jako zmienne fazowe
+		otrzymaliśmy, w przypadku braku zer w transmitancji układu, model, w którym A –
+		macierz (stanu) systemu miała formę Frobeniusa:
+		\begin{equation}
+			A=\begin{pmatrix}
+			  0    &   1    &   0    &   0    & \cdots &   0      &   0    \\
+			  0    &   0    &   1    &   0    & \cdots &   0      &   0    \\
+			  0    &   0    &   0    &   1    & \cdots &   0      &   0    \\
+			  0    &   0    &   0    &   0    & \cdots &   0      &   0    \\
+			\vdots & \vdots & \vdots & \vdots & \ddots & \vdots   & \vdots \\
+			  0    &   0    &   0    &   0    & \cdots &   0      &   1    \\
+			 -a_{1}&  -a_{2}&  -a_{3}&  -a_{4}& \cdots & -a_{m-1} & -a_{m}
+			\end{pmatrix}
+		\end{equation}
+		Natomiast 
+		\begin{equation}
+			B = 
+			\begin{pmatrix}
+				0 \\
+				0 \\
+				0 \\
+				\ddots \\
+				0 \\
+				k 
+			\end{pmatrix}
+		\end{equation}
+		Gdzie k jest współczynnikiem wzmocnienia, a 
+		\begin{equation}
+			C = 
+			\begin{pmatrix}
+				1 & 0 & 0 & \ddots & 0
+			\end{pmatrix}
+		\end{equation}
+		A $D=0$
+ 
+		W przypadku , gdy A jest wysokiego rzędu i wysoką wartość wymiarów n, wtedy
+		powyższe równania reprezentują postać kanoniczną modelu liniowego obiektu SISO
+		\newline
+		W przypadku obiektu typu MIMO model ma postać macierzy blokowych,
+		gdzie poszczególne bloki są modelami odpowiednich par wejścia-wyjścia
+		Jeżeli w transmitancji obiektu SISO występują zera, to kanoniczna postać fazowa ma identyczną
+		macierz stanu A i macierz wyjścia C jak w przypadku bez zer, $B = [ \beta_1, \beta_2 \ddots \beta_n]^T$ , $D = [ \beta_o ]$, gdzie
+		$\beta_i (i=0, 1, . . . , n)$ są współczynnikami ze zmodyfikowanych dla
+		tego przypadku definicji
+		fazowych zmiennych stanu. Zwraca uwagę obecność sprzężenia transmisyjnego (
+		bezpośredniego sprzężenia „do przodu” ) od wejścia do wyjścia obiektu. Również
+		charakterystyczny jest bezpośredni, proporcjonalny wpływ sygnału sterującego na każdą
+		ze zmiennych stanu.
+		\subsection{Wyprowadzenie modelu odsprzężonego}
+			Inną postacią kanoniczną modelu jest tzw, model odsprzężony, którego macierz A jest
+			macierzą diagonalną:
+			\begin{equation}
+				A=\begin{pmatrix}
+				  \lamba_1    &   0    &   0    &   0    & \cdots &   0    &   0      \\
+				  0    &   \lamba_2    &   0    &   0    & \cdots &   0    &   0      \\
+				  0    &   0    &   \lambda_3    &   0    & \cdots &   0    &   0      \\
+				  0    &   0    &   0    &    \lambda_4   & \cdots &   0    &   0      \\
+					\vdots & \vdots & \vdots & \vdots & \ddots & \lambda_{n-1} & \vdots   \\
+				  0    & \vdots & \vdots & \vdots & \ddots &   0    & \lambda_n\\
+				\end{pmatrix}
+			\end{equation}
+
+			$\lambda_i$ są wartościami własnymi danej macierzy stanu A (uzyskanej z opisu obiektu, na ogół niediagonalnej).
+			Inne macierze wyglądają wtedy następująco	
+			\begin{equation}
+				B = 
+				\begin{pmatrix}
+					1 \\
+					1 \\
+					1 \\
+					\ddots \\
+					1 \\
+					1 
+				\end{pmatrix}
+			\end{equation}
+			\begin{equation}
+				C = 
+				\begin{pmatrix}
+					c_1 & c_2 & c_4 & \ddots & c_n
+				\end{pmatrix}
+			\end{equation}
+			natomiast $D = [c_0]$
+
+			W tym miejscu założyliśmy, że dany układ o liniowym modelu stanowym $<A,B,C,D>$ ma
+			transmitancję operatorową w postaci zespolonej funkcji wymiernej, tj. ilorazu
+			wielomianów o współczynnikach rzeczywistych, zmiennej zespolonej $s$.
+			\begin{equation}
+				G(s) = \frac{L(s)}{M(s)}
+			\end{equation}
+			Dodatkowo zakładamy, że wielomian w mianowniku ma pojedyncze pierwiastki 
+			oraz jest ich $n$ i można wykazać,
+			że są one tożsame z wartościami własnymi macierzy A. Ponadto zakładamy, że zera
+			transmitancji mają wartości różne od wartości biegunów.
+			W przypadku wielomianów zmiennej zespolonej ze współczynnikami rzeczywistymi jego
+			pierwiastkami mogą być liczby rzeczywiste lub zespolone. Wielomian stopnia
+			nieparzystego ma co najmniej jeden pierwiastek rzeczywisty. Jeżeli pierwiastkiem jest
+			liczba zespolona, to jest nim również liczba zespolona sprzężona z nią
+
+			Załóżmy, że wyznaczyliśmy wartości pierwiastków wielomianów L(s) i M(s) i wynoszą
+			one odpowiednio  $[z_1 z_2 \ddots z_m ]$ i $[\lambda_1 \lambda_2 \ddots \lambda_n ]$
+			, gdzie $m$ jest stopniem wielomianu w
+			liczniku i $m \leq n$. Wówczas możemy przedstawić transmitancję w postaci
+			sfaktoryzowanych wielomianów:
+			\begin{equation}
+				G(s) = \frac{k(s-z_1)(s-z_2)}{(s-\lambda_1)(s-\lambda_2)}\ddots\frac{(s-z_m)}{s-\lambda_m)}\ddots\frac{1}{(s-\lambda_n)}
+			\end{equation}
+			Można dokonać rozkładu powyższego wyrażenia na ułamki proste:
+			\begin{equation}
+				\frac{Y(s)}{U(s)} = \frac{L(s)}{M(s)} = c_0 + \sum^n_{i=0}\frac{c_i}{s-\lambda_i}
+			\end{equation}
+			Każdy element pod znakiem sumy można interpretować jako elementarną transmitancję
+			elementu 1-go rzędu, a całe wyrażenie po prawej stronie jako połączenie równoległe tych
+			członów (sygnałem wejściowym do każdego z nich jest u(t), a sygnałem wyjściowym y(t)
+			jest suma ich sygnałów wyjściowych. Układ równań stanu tak przekształconego obiektu
+			przedstawia się następująco:
+			\begin{align*}
+				\dot{x_1} = \lambda_1 x_1 + u \\
+				\dot{x_2} = \lambda_2 x_2 + u \\
+				\ddots \\
+				\dot{x_n} = \lambda_n x_n + u \\
+			\end{align*}
+			Stałe $c_0 c_1 \ddots c_n$ można wyznaczyć jako funkcje współczynników $a_i$
+			oraz $b_i$ wielomianów $L(s)$ oraz $M(s)$, porównując porównując współczynniki
+			przy odpowiednich potęgach $s$ po obu stronach tożsamości.
+			Ta interpretacja uzasadnia postać macierzy modelu odsprzężonego przytoczone powyżej.
+			W przypadku, gdy bieguny transmitancji są wielokrotne,
+			nia da się zdiagonalizować modelu. Można jedynie uzyskać postać blokowo diagonalną,
+			gdzie bloki przyjmują postać tzw. klatek Jordana.
+			Przy biegunie dwukrotnym $\lambda_i$ taka klatka ma postać 
+			\begin{equation}
+				\begin{pmatrix}
+					\lambda_i & 0 \\
+					0 & \lambda_i
+				\end{pmatrix}
+			\end{equation}
+			Natomiast przy biegunie trzykrotnie mamy
+			\begin{equation}
+				\begin{pmatrix}
+					\lambda_i & 0 & 0 \\
+					0 & \lambda_i & 0 \\
+					0 & 0 & \lambda_i
+				\end{pmatrix}
+			\end{equation}
+			Równania stanu o indeksach $i, i+1$ mają wtedy postać
+			\begin{align*}
+				\dot{x_i} = \lambda_ix_i + x_{i+1} \\ 
+				\dot{x_{i+1}} = \lambda_ix_{i+1} + u
+			\end{align*}
+	\section{Geometryczna interpretacja liniowego modelu stanowego.}
+		Dla większej przejrzystości poniższych rozważań przypomnę, że płaszczyzny
+		są w geometrii. Gdy mówimy o wymiarach macierzowych i jakieś równanie określa
+		płaszczyznę w przestrzeni euklidesowej n-wymiarowej to mówimy o 
+		hiperpłaszczyźnie.
+		Przestrzeń euklidesowa to taka przestrzeń jak jest w prawdziwym życiu.
+		Przypomnijmy sobie również definicję układu zdegenerowanego. 
+		To taki układ którego punkty stacjonarne nie 
+		stanowią izolowanych punktów, a są na przykład krzywą.
+		\newline
+		Przejdźmy do karuzeli spierdolenia fundowaną przez kasińskiego.
+		\newline
+		Przestrzeń stanu jest przestrzenią wielowymiarową
+		$X = R^n$ , gdzie $n$ jest wymiarem wektora stanu.
+
+		W przypadku układu niezdegenerowanego, możemy wyobrazić sobię trajektorię stanu
+		jako parametryczną krzywą $n$-wymiarową w przestrzeni $X$, gdzie parametrem
+		tej krzywej jest czas.
+		Elementami tej trajektorii są prędkości zmian stanu.
+
+		Równanie stanu opisujące model dynamiki, w sensie geometrycznym opisuje
+		rzutowanie wektora stanu $x(t)$ na hiperpłaszyznę styczną do trajektorii stanu.
+
+		Jest to hiperpłaszyzna styczna w jednym punkcie. Ponieważ znając wektor stanu $x(t)$ oraz 
+		sterowań $u(t)$, nie jesteśmy w stanie otrzymać całej trajektorii.
+		Aby to udowodnić wystarczy spojrzeć na poniższe równanie
+		\begin{equation}
+			\dot{x} = Ax + Bu
+		\end{equation}
+
+		To równanie również opisuje analogiczne rzutowanie wektora sterowań $u(t)$ w tę
+		hiperpłaszczyznę. Inaczej rzecz się ma w przypadku
+		modeli z czasem dyskretnym. Tutaj różnicowe równanie stanu opisuje rzutowanie w
+		przestrzeń stanu (w rozmaitość różniczkową stanu , gdy model jest nieliniowy).
+
+
+		Macierze $A$ i $B$ modelu liniowego można interpretować jako operatory rzutowania
+		odpowiednio elementów przestrzeni stanu i przestrzeni
+		sterowań w inną przestrzeń, taką jak hiperpłaszczyzna styczna czy rozmaitość.
+		Podobnie macierze modelu wyjścia $C$ i $D$ można
+		interpretować jako operatory rzutowe odpowiednio wektorów stanu i wektorów
+		sterowań w $p$ wymiarową przestrzeń wyjść. Należy pamiętać, że wektor stanu jest
+		wektorem wodzącym, natomiast wektor sterowań, w odniesieniu do układu
+		współrzędnych stanu jest wektorem swobodnym. W przypadku modeli liniowych
+		przestrzeń stanu jest przestrzenią liniową, a hiperpłaszczyzna styczna jest 
+		\href{https://en.wikipedia.org/wiki/Isomorphism}{izomorficzna}
+		z przestrzenią stanu (jest obrócona względem przestrzeni stanu wskutek działania na
+		każdy jej element przez macierz $A$).
+
+		Macierz stanu A działając na chwilowy wektor stanu $x(t)$ rzutuje go na hiperpłaszczyznę
+		styczną do trajektorii w punkcie $x(t)$. Podobnie macierz sterowań $B$ rzutuje chwilowy
+		wektor sterowań $u(t)$ w tę hiperpłaszczyznę. Efekt mnożenia wektora wodzącego przez
+		macierz pełnego rzędu $A$ jest następujący:
+\end{document}
