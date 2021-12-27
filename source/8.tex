@@ -1,0 +1,226 @@
+\author{Kasiński}
+\title{Wykład 8}
+\documentclass{article}
+\usepackage[margin=1.4cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{polski}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\begin{document}
+	\maketitle
+	\section{Badanie Sterowalności obiektu}
+		Dysponując adekwatnym modelem analitycznym obiektu sterowania można zbadać jego
+		sterowalność w oparciu o ten model. Ogólna postać stanowego modelu (równania stanu i
+		równania wyjścia), przy założeniu, że jest to obiekt o skupionych parametrach , jest
+		następująca:
+		\begin{align*}
+			\dot{x(t)} = f(x(t), u(t), t) \\
+			y(t) = h(x,u,t)
+		\end{align*}
+		pole wektorowe f jest wektorem funkcji (w ogólnym przypadku nieliniowych), których
+		argumentami są wybrane zmienne stanu i sygnały sterujące, mające wpływ na daną składową
+		wektora prędkości zmian stanu.
+
+		Niestacjonarność właściwości dynamicznych i statycznych obiektu zaznacza się, poprzez
+		jawną obecność czasu jako argumentu w równaniach modelu.
+
+		Jeżeli w czasie pracy obiektu ulega zmianie jego struktura powiązań wejścia-wyjścia, to
+		mówimy o obiekcie ze zmienną strukturą. Po każdym takim incydencie powinna być
+		przeprowadzona adekwatna zmiana w strukturze modelu.
+
+		Analiza zachowania obiektu o zmiennej strukturze wymaga posługiwania się wieloma
+		modelami przełączanymi w chwilach zmiany struktury i traktowania wartości końcowych
+		zmiennych występujących w poprzedniej strukturze jako warunki początkowe w
+		strukturze aktualnej.
+
+		Przykładem obiektu sterowania o zmiennej w trakcie misji strukturze równań stanu i wyjścia
+		jest samolot o zmiennej geometrii płatów nośnych, rakieta wielostopniowa, robot-
+		manipulator wykonujący zdanie wymagające interakcji z otoczeniem 
+
+		Niestacjonarność może cechować obiekt o stałej strukturze, którego właściwości ulegają
+		zmianie w czasie, w funkcji przebiegu (kilometrażu) wskutek procesów starzenia, zużycia, lub
+		przekroczenia gwarancji (np. granicznej liczby cykli roboczych). W tym przypadku jest ona
+		modelowana poprzez jawne uzależnienie od czasu wybranych parametrów modelu
+		eksploatacyjnego obiektu. W odróżnieniu od niestacjonarności strukturalnej tego rodzaju
+		niestacjonarność określamy mianem niestacjonarności parametrycznej.
+
+		Zazwyczaj dynamika zmian wartości takich parametrów jest duże wolniejsza od dynamiki
+		własnej obiektu, co pozwala analizować go jako obiekt odcinkami stacjonarny, z aktualizacją
+		wartości wybranych parametrów modelu (odnowa modelu).
+
+		Jeżeli procesy zużycia mają dużą dynamikę (przypadek silnika rakietowego), zbliżoną do
+		dynamiki procesu, to niestacjonarność parametryczna musi być jawnie ujęta w równaniu
+		stanu.
+		\begin{verbatim}
+			Nie istnieje w ogólnym przypadku bezpośrednia metoda
+			badania sterowalności obiektu na podstawie jego nieliniowego
+			modelu w przestrzeni stanu!
+		\end{verbatim}
+
+		Natomiast, na podstawie liniowych równań stanu (modelu lokalnie przybliżającego dynamikę
+		nieliniową) można przeprowadzić test sterowalności opierając się o twierdzenie R. Kalmana.
+		W przypadku liniowym, model niestacjonarny przyjmuje postać:
+		\begin{align*}
+			\dot{x(t)} = A(t)x(t) + B(t)u(t) \\
+			y(t) = C(t)x(t) + D(t)u(t)
+		\end{align*}
+		gdzie niestacjonarność „wbudowano” w parametry modelu.
+		Zakładając stacjonarność obiektu mamy:
+		\begin{align*}
+			\dot{x(t)} = Ax(t) + Bu(t) \\
+			y(t) = Cx(t) + Du(t)
+		\end{align*}
+		Macierz stanu $A$ reprezentuje model autonomiczny $ u(t) = 0 $, a trajektoria stanu
+		modelu autonomicznego jest obrazem ruchu swobodnego.
+
+		Kolumny macierzy sterowań $B = [b_1 b_2 \cdots b_m]$ należy zinterpretować jako kierunkowe
+		współczynniki wzmocnienia skalarnych sterowań odpowiednio: $u_1 u_2 \cdots u_m$ . Decydują
+		one o efekcie kierunkowym sterowania na określonym wejściu. Natomiast o wielkości
+		wpływu danego sterowania na prędkości zmian wektora stanu decyduje amplituda
+		(chwilowa wartość) danego sterowania. Jeżeli amplituda jest ograniczona 
+		to wpływ ten jest również ograniczony lub skwantowany.
+
+		Sterowalność obiektu oznacza taką jego właściwość,
+		że jeżeli znajduje się on w
+		dowolnym stanie początkowym, to przez synergię ruchu własnego (swobodnego) i
+		odpowiednie sterowanie może osiągnąć dowolny stan końcowy (zadany).
+
+		Przy czym nie stawiamy dodatkowych warunków np. ograniczających czas osiągnięcia
+		stanu końcowego, czy ograniczających wartości chwilowe sygnałów sterujących.
+
+		Tak rozumiana sterowalność wynika jedynie z geometrycznych konsekwencji
+		zastosowania danego modelu obiektu w przestrzeni stanu. Mnożenie wektora stanu
+		przez macierz $A$ można rozpatrywać jako swego rodzaju 
+		rzutowanie $X^n \rightarrow TX^n$ (elementu
+		wektorowej przestrzeni stanu Xn w element hiperpłaszczyzny $TX^n$,
+		stycznej do $X^n$ ), czyli złożenie operacji
+		obrotu wektora w przestrzeni n-wymiarowej i zmiany skali
+		(współczynnikiem zmiany skali wektora jest wartość $det A$). Natomiast mnożenie
+		wektora sterowań przez macierz sterowań można rozpatrywać jako swego rodzaju
+		rzutowanie $U^m \rightarrow TX^n$ (elementu wektorowej przestrzeni sterowań
+		$U^m$ w element
+		hiperpłaszczyzny $TX^n$), a jest to w równaniu stanu składnik addytywny. Macierz $AB$
+		reprezentuje operator rzutowania efektu sterowania w hiperpłaszczyznę prędkości $TX^n$.
+		Utwórzmy następującą macierz:
+		\begin{equation}
+			S = [ B AB A^2B \cdots A^{n-1}B]
+		\end{equation}
+		Gdzie $n$ jest liczbą wymiarów modelu.
+		Macierz $S$ nosi nazwę macierzy sterowalności i znajduje zastosowanie w
+		badaniu sterowalności modelu liniowego.
+
+		\begin{verbatim}
+			Na to, by obiekt liniowy o równaniach był sterowalny potrzeba i wystarcza, że
+			spełniona jest równość
+		\end{verbatim}
+		\begin{equation}
+			rank(s) = n
+		\end{equation}
+		Macierz sterowalności ma wymiary $n\times(n\times m)$ 
+		i składa się z $n$ bloków $m$-kolumnowych.
+		Kolejny blok uzyskujemy rekurencyjnie z poprzedniego poprzez przemnożenie go przez
+		$A$. Opłaca się badać, czy warunek rzędu jest spełniony po uzupełnieniu macierzy o kolejny
+		$i$-ty blok (dla niekompletnej macierzy $S_i$).
+		Jeżeli jest spełniony, to znaczy, że obiekt jest
+		sterowalny i dalsze obliczenia kolejnych bloków są niecelowe. Niska wartość wskaźnika
+		$i$ świadczy o malej roli ruchu swobodnego w zapewnieniu obiektowi sterowalności i o
+		dominującej roli struktury wielowymiarowego układu sterowania (stopnia powiązań
+		sygnałów wejściowych z sygnałami zmiennych stanu).
+
+		Warto zastanowić się nad rolą poszczególnych sygnałów sterujących w zapewnieniu
+		sterowalności obiektu i zapewnieniu efektywnego sterowania. W wielowymiarowym
+		obiekcie sterowania nie wszystkie sygnały sterujące są jednakowo ważne z punktu
+		widzenia sterowalności obiektu oraz efektywności sterowania.
+		\subsection{Przykład}
+			Dany jest wielowymiarowy obiekt liniowy $n$-tego rzędu 
+			o czterech wejściach sterujących.
+			Przeprowadźmy negatywną analizę jego sterowalności 
+			z punktu widzenia poszczególnych wejść.
+			\begin{itemize}
+				\item Pomińmy i-ty sygnał sterujący (i= 1,2,3,4).
+					Mamy 4 trójelementowe kombinacje: 
+					$(u_1 , u_2 , u_3), (u_1 , u_2 , u_4), (u_1 , u_3 , u_4) ,
+					(u_2 , u_3 , u_4)$. Każda odpowiada usunięciu z macierzy
+					sterowań B odpowiednio 4-tej, 3-ciej, 2-giej, 1-wszej kolumny.
+				\item Przeprowadźmy dla każdej z kombinacji test sterowalności.
+					Jeżeli dla którejś z nich
+					wynik testu jest negatywny, to oznacza to,
+					że usunięte wejście jest niezbędne dla
+					zapewnienia sterowalności układu.
+					Takie wejście nazywamy krytycznym.
+				\item Jeżeli dla wybranej konfiguracji wejść wynik jest pozytywny,
+					to oznacza to, że dane
+					usunięte wejście nie jest niezbędne dla zapewnienia
+					sterowalności obiektu, a kombinacje
+					dla których test jest pozytywny można uznać
+					za alternatywne (antyawaryjne).
+				\item W takim przypadku należy sprawdzić jak zmieniła
+					się wartość indeksu $j$ macierzy
+					sterowalności obiektu zredukowanego $S_j$.
+					Gdzie $S_j$ to
+					minimalna wartość wykładnika potęgi
+					macierzy $A$ w tej macierzy, przy której częściowa 
+					macierz sterowalności $S_j$ spełnia
+					warunek rzędu. Zawsze spełniony jest warunek $i\leq j$.
+					Jeżeli $i=j$, to konfiguracja 3-
+					wejsciowa jest ekwiwalentna nadmiarowej konfiguracji 
+					4-wejściowej. Jeżeli $j > i$,
+					to konfigurację 3-wejściową można uznać za
+					zapasową. Stopień odporności 
+					obiektu na awarie 
+					rośnie wraz z liczbą zredukowanych kombinacji zapasowych.
+			\end{itemize}
+			Powyższe rozważania łatwo uogólnić na przypadek układu z $m$ wejściami. Wówczas
+			operacje usuwania wejść można rozszerzyć na par wejść, trójki wejść, itd.
+
+			Innym aspektem analizy właściwości sterowniczych obiektu wielowymiarowego jest
+			uwzględnienie ograniczeń wartości chwilowych sygnałów sterujących oraz zbadanie
+			relacji pomiędzy celem sterowania a dynamiką własną obiektu. Sprawę można prościej
+			przedyskutować w przypadku obiektów sterowanych dyskretnie w czasie.
+
+			Celem sterowania jest zazwyczaj przeprowadzenie obiektu z pewnego stanu
+			początkowego do zadanego stanu końcowego. W przestrzeni stanu cel reprezentuje
+			wektor $x_N – x0$. Cel ten posiada określony kierunek, zwrot i długość).
+			Sterowanie chwilowo
+			sprzyjające realizacji celu charakteryzuje się dodatnim iloczynem skalarnym
+			\begin{equation}
+				<x_N-x_0, Bu_k> > 0
+			\end{equation}
+			Predykcja wartości wektora stanu w chwili następnej na podstawie aktualnej wartości
+			wektora stanu i podjętej, aktualnej decyzji sterującej wynika z równania:
+			\begin{equation}
+				x_{k+1} = A^*x_k + B^*u_k
+			\end{equation}
+			Gdzie $A^*$ oraz $B^*$ są odpowiednio macierzą stanu i macierzą sterowań w modelu dyskretnym.
+			\begin{align*}
+				x_N = A^*x_{N-1} + B^*u_{N-1} \\
+				x_N = A^*[A^*x_{N-2}+B^*u_{N-2}] + B^*u_{N-1} \\
+				x_N = (A^*)^Nx_0+\sum^{N-1}_{k=0}(A^*)^{N-1-k}B^*u_k
+			\end{align*}
+			Przy danych $x_0$ oraz $x_N$ należy rozwiązać to równanie 
+			ze względu na sekwencję sterowań
+			\begin{equation}
+				u_0,u_1,u_2,\cdots u_{N-1}
+			\end{equation}
+
+			Jest to układ $n$ równań liniowych z $(N-1) \times m$ niewiadomymi.
+			Aby był określony macierz układu (macierz blokowa złożona z bloków odpowiadających
+			wyrażeniom pod znakiem $\sum$) musi być rzędu $n$.
+			Wówczas jedynie gdy $(N-1) \times m =n$
+			uzyskujemy jednoznaczne rozwiązanie, tj. sekwencję sterującą realizującą cel.
+			Można sprawdzić jak wiele decyzji sterujących potrzebne jest do tego. W tym celu
+			poszukujemy $N$ spełniającego powyższą zależność. Takie działanie ma sens, gdy liczba
+			zmiennych stanu jest całkowitą wielokrotnością liczby wejść.
+			W takim przypadku wyznaczone jednoznacznie rozwiązanie powyższego
+			równania określa najkrótszą sekwencję sterującą
+			przeprowadzających układ z danego stanu początkowego do
+			zadanego stanu końcowego.
+			Gdy $m=n$ jest to sekwencja jednoelementowa. Występuje w przypadku
+			układu o dynamice kanałów
+			wejścia-wyjścia 1-go rzędu i o odpowiednio dużej liczbie wejść. W przypadku kanałów o
+			dynamice wyższego rzędu, długość sekwencji sterującej nie może być mniejsza niż
+			maksymalny rząd kanału.
+\end{document}
