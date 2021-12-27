@@ -133,7 +133,7 @@
 				0 \\
 				0 \\
 				0 \\
-				\ddots \\
+				\vdots \\
 				0 \\
 				k 
 			\end{pmatrix}
@@ -142,7 +142,7 @@
 		\begin{equation}
 			C = 
 			\begin{pmatrix}
-				1 & 0 & 0 & \ddots & 0
+				1 & 0 & 0 & \cdots & 0
 			\end{pmatrix}
 		\end{equation}
 		A $D=0$
@@ -165,8 +165,8 @@
 			macierzą diagonalną:
 			\begin{equation}
 				A=\begin{pmatrix}
-				  \lamba_1    &   0    &   0    &   0    & \cdots &   0    &   0      \\
-				  0    &   \lamba_2    &   0    &   0    & \cdots &   0    &   0      \\
+				  \lambda_1    &   0    &   0    &   0    & \cdots &   0    &   0      \\
+				  0    &   \lambda_2    &   0    &   0    & \cdots &   0    &   0      \\
 				  0    &   0    &   \lambda_3    &   0    & \cdots &   0    &   0      \\
 				  0    &   0    &   0    &    \lambda_4   & \cdots &   0    &   0      \\
 					\vdots & \vdots & \vdots & \vdots & \ddots & \lambda_{n-1} & \vdots   \\
@@ -182,7 +182,7 @@
 					1 \\
 					1 \\
 					1 \\
-					\ddots \\
+					\vdots \\
 					1 \\
 					1 
 				\end{pmatrix}
@@ -190,7 +190,7 @@
 			\begin{equation}
 				C = 
 				\begin{pmatrix}
-					c_1 & c_2 & c_4 & \ddots & c_n
+					c_1 & c_2 & c_4 & \cdots & c_n
 				\end{pmatrix}
 			\end{equation}
 			natomiast $D = [c_0]$
@@ -216,7 +216,7 @@
 			liczniku i $m \leq n$. Wówczas możemy przedstawić transmitancję w postaci
 			sfaktoryzowanych wielomianów:
 			\begin{equation}
-				G(s) = \frac{k(s-z_1)(s-z_2)}{(s-\lambda_1)(s-\lambda_2)}\ddots\frac{(s-z_m)}{s-\lambda_m)}\ddots\frac{1}{(s-\lambda_n)}
+				G(s) = \frac{k(s-z_1)(s-z_2)}{(s-\lambda_1)(s-\lambda_2)}\cdots\frac{(s-z_m)}{s-\lambda_m)}\cdots\frac{1}{(s-\lambda_n)}
 			\end{equation}
 			Można dokonać rozkładu powyższego wyrażenia na ułamki proste:
 			\begin{equation}
@@ -230,7 +230,7 @@
 			\begin{align*}
 				\dot{x_1} = \lambda_1 x_1 + u \\
 				\dot{x_2} = \lambda_2 x_2 + u \\
-				\ddots \\
+				\cdots \\
 				\dot{x_n} = \lambda_n x_n + u \\
 			\end{align*}
 			Stałe $c_0 c_1 \ddots c_n$ można wyznaczyć jako funkcje współczynników $a_i$
@@ -313,4 +313,113 @@
 		styczną do trajektorii w punkcie $x(t)$. Podobnie macierz sterowań $B$ rzutuje chwilowy
 		wektor sterowań $u(t)$ w tę hiperpłaszczyznę. Efekt mnożenia wektora wodzącego przez
 		macierz pełnego rzędu $A$ jest następujący:
+		\begin{itemize}
+			\item Wektor zmienia kierunek czyli ulega złożonemu obrotowi
+				w przestrzeni $n$-wymiarowej
+			\item wektor zmienia swoją długość w zależności od wartości $det A$.
+				Dla $det A =1$ nie
+				zmienia długości, dla $det A > 1 $ulega wydłużeniu,
+				dla $det A < 1$, skróceniu
+			\item addytywny składnik zależny od wektora sterowania powoduje translację końca
+				wektora stanu w podprzestrzeni $m$-wymiarowej o ile kolumny macierzy B są
+				liniowo niezależne.
+		\end{itemize}
+		\subsection{Diagonalizacja macierzy stanu $A$}
+			Jeszcze przejrzyściej jest to widoczne w przypadku modelu liniowego z czasem
+			dyskretnym, gdzie te działania odwzorowują wektor stanu na przestrzeń stanu.
+			Są takie kierunki w przestrzeni stanu, dla których działanie w postaci mnożenia wektora
+			o takim kierunku przez macierz $A$ nie powoduje zmiany kierunku wektora, a jedynie
+			zmianę jego długości. Wyznaczające te kierunki wektory noszą nazwę wektorów
+			własnych. Macierz $n \times n$ pełnego rzędu ma n wektorów własnych. Są one określone co do
+			kierunku, ich długość jest nieokreślona. Tworzą układ wektorów liniowo niezależnych
+			Oznaczmy je jako $e^1, e^2, \cdots ,e^n$ .
+			Macierz, której kolumny stanowią wektory własne nazywamy
+			macierzą modalną:
+			\begin{equation}
+				M = 
+				\begin{pmatrix}
+					e^1 & e^2 & \cdots & e^n
+				\end{pmatrix}
+			\end{equation}
+			Macierz modfalna jest nieosobliwa (można ją odwrócić). Macierz $A$ ma tyle macierzy
+			modalnych ile jest permutacji kolumn macierzy $M$ czyli $n!$ Mówimy, że jest ona określona
+			z dokładnością do permutacji.
+			Wektory własne spełniają następujące równania:
+			\begin{equation}
+				Ae^i = \lambda_i e^i
+			\end{equation}
+			Dla $i= 1,2,\ddots n$
+			Jest to macierzowe równanie liniowe
+			\begin{equation}
+				[A_i-\lambda_iI]e^i = 0
+			\end{equation}
+			W zapisie macierzowym można je przedstawić następująco
+			\begin{equation}
+				A [ e^1 e^2  \cdots  e^n ] = [ e^1  e^2  \cdots  e^n ] \Lambda
+			\end{equation}
+			gdzie $\Lambda = diag[ \lambda^1  \lambda^2 \ddots  \lambda^n ]$ więc
+			\begin{align*}
+				AM = M\Lambda \\ 
+				\Lambda = M^{-1}AM
+			\end{align*} 
+			W ten sposób dokonuje się diagonalizacji macierzy stanu $A$
+	\section{Równoważność liniowych modeli w przestrzeni stanu}
+		Załóżmy, że sporządzono dwa modele systemu
+		w przestrzeni stanu dokonując odmiennego wyboru zmiennych stanu:
+		\newline
+		Model I - wektor stanu $x$:
+		\begin{align*}
+			\dot{x(t)} = Ax(t) + Bu(t) \\
+			y(t) = Cx(t) + Du(t)
+		\end{align*}
+		Model II - wektor stanu $z$:
+		\begin{align*}
+			\dot{z(t)} = A^*z(t) + B^*u(t) \\
+			y(t) = C^*z(t) + D^*u(t)
+		\end{align*}
+		Spełniony jest warunek $dim(x)=dim(z)=n$
+		Oraz transmitancje operatorowe obu modeli są identyczne
+		\begin{equation}
+			C[sI-A]^{-1}B+D = C^*[sI-A^*]^{-1}B^*+D^*
+		\end{equation}
+		\subsection{Warunek równoważności liniowych}
+			Na to by modele I i II były równoważnymi opisami tego samego obiektu sterowania,
+			wystarczy istnienie nieosobliwej macierzy $P$ przekształcenia
+			wektora stanu
+			$x$ w wektor stanu $z$ zwana macierzą podobieństwa 
+			\begin{equation}
+				z = Px
+			\end{equation}
+			Podstawiając do drugiego modelu za $z$ oraz $\dot{z}$
+			powyższe związki otrzymujemy:
+			\begin{align*}
+				P\dot{x(t)} = A^*Px(t) + B^*u(t) \\
+				y(t) = C^*Px(t) + D^*u(t)
+			\end{align*}
+			Jeżeli oba modele są równoważne to muszą istnieć zależności
+			\begin{align*}
+				A = P^{-1}A^*P \\
+				A^* = P^{-1}AP 
+			\end{align*}
+			\begin{align*}
+				B = P^{-1}B^*P \\
+				B^* = P^{-1}BP 
+			\end{align*}
+			\begin{align*}
+				C = P^{-1}C^*P \\
+				C^* = P^{-1}CP 
+			\end{align*}
+			\begin{align*}
+				D = P^{-1}D^*P \\
+				D^* = P^{-1}DP 
+			\end{align*}
+			Jeżeli za macierz podobieństwa $P$ przyjąć macierz 
+			modalną $M$ danej macierzy stanu $A$, to
+			można dany model zdiagonalizować 
+			Mamy wtedy przypadek jednokrotnych biegunów transmitancji
+			- wartości własnych macierzy A,
+			Jeśli nie jest możliwa diagonalizacja to można nadal w
+			istotnym stopniu zlikwidować sprzężenia
+			skrośne w modelu obiektu jest to wtedy przypadek wielokrotnych biegunów transmitancji - wartości własnych macierzy A.
+			Usunięcie sprzężeń skrośnych ułatwia projekt struktury układu sterującego.
 \end{document}

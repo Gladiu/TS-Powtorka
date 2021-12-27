@@ -69,14 +69,14 @@
 		Równania stanu i wyjścia nieliniowego obiektu niestacjonarnego zapisujemy w postaci
 		ogólnej:
 		\begin{align*}
-			\dot{x}(t) = f(x(t), u(t), t) //
+			\dot{x}(t) = f(x(t), u(t), t) \\
 			y(t) = h(x,u,t)
 		\end{align*}
 		gdzie argument t oznacza jawną zależność funkcji f, h lub ich parametrów od czasu.
 		Oczywiście, niestacjonarność dodatkowo podnosi stopień trudności rozwiązania
 		nieliniowych równań stanu.
 		\begin{align*}
-			\dot{x}(t) = A(t) x(t) + B(t)u(t) //
+			\dot{x}(t) = A(t) x(t) + B(t)u(t) \\
 			y(t) = C(t) x(t) + D(t) u(t)
 		\end{align*}
 		gdzie niestacjonarność wbudowno w parametry modelu
@@ -117,8 +117,8 @@
 		\end{verbatim}
 		
 		\begin{align*}
-			x_k = x_{k-1} + T_pf(x_{k-1}, u_{k-1}) //
-			... //
+			x_k = x_{k-1} + T_pf(x_{k-1}, u_{k-1}) \\
+			... \\
 			x_k \approx [I + AT_p] x_{k-1} + B u_{k-1}
 		\end{align*}
 		Warto zauważyć, że macierz stanu modelu dyskretnego jest identyczna z pierwszymi dwoma
@@ -156,8 +156,8 @@
 		sterowania cyfrowego sygnały sterujące mają charakter schodkowy, o szerokości stopnia
 		równej $T_p$.
 		\begin{align*}
-			x_{k+1} = e^{AT_p}x_k+\int^T_p_0e^{A(T_p-\tau)}Bu_kd\tau //
-			x_{k+1} = e^{AT_p}x_k+\int^T_p_0e^{A(T_p-\tau)}d\tauBu_k
+			x_{k+1} = e^{AT_p}x_k+\int^{T_p}_0e^{A(T_p-\tau)}Bu_kd\tau \\
+			x_{k+1} = e^{AT_p}x_k+\int^{T_p}_0 e^{A(T_p-\tau)}d\tau Bu_k
 		\end{align*}
 		Po scałkowaniu otrzymujemy
 		\begin{equation}
@@ -165,8 +165,8 @@
 		\end{equation}
 		Gdzie
 		\begin{itemize}
-			\item $A^* = e^{AT_p}
-			\item $B^* = e^{AT_p}\frac{B}{T_p}
+			\item $A^* = e^{AT_p}$
+			\item $B^* = e^{AT_p}\frac{B}{T_p}$
 		\end{itemize}
 		Macierze $C^*$ oraz $D^*$ nie ulegają zmianie przy dyskretyzcji
 
