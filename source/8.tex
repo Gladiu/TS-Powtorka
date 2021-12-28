@@ -194,12 +194,16 @@
 			\begin{equation}
 				x_{k+1} = A^*x_k + B^*u_k
 			\end{equation}
-			Gdzie $A^*$ oraz $B^*$ są odpowiednio macierzą stanu i macierzą sterowań w modelu dyskretnym.
-			\begin{align*}
-				x_N = A^*x_{N-1} + B^*u_{N-1} \\
-				x_N = A^*[A^*x_{N-2}+B^*u_{N-2}] + B^*u_{N-1} \\
-				x_N = (A^*)^Nx_0+\sum^{N-1}_{k=0}(A^*)^{N-1-k}B^*u_k
-			\end{align*}
+			Gdzie $A^*$ oraz $B^*$ są odpowiednio macierzą stanu i
+			macierzą sterowań w modelu dyskretnym.
+			\begin{figure}[H]
+				\begin{align*}
+					x_N = A^*x_{N-1} + B^*u_{N-1} \\
+					x_N = A^*[A^*x_{N-2}+B^*u_{N-2}] + B^*u_{N-1} \\
+					x_N = (A^*)^Nx_0+\sum^{N-1}_{k=0}(A^*)^{N-1-k}B^*u_k
+				\end{align*}
+				\label{suma}
+			\end{figure}
 			Przy danych $x_0$ oraz $x_N$ należy rozwiązać to równanie 
 			ze względu na sekwencję sterowań
 			\begin{equation}
@@ -214,8 +218,8 @@
 			Można sprawdzić jak wiele decyzji sterujących potrzebne jest do tego. W tym celu
 			poszukujemy $N$ spełniającego powyższą zależność. Takie działanie ma sens, gdy liczba
 			zmiennych stanu jest całkowitą wielokrotnością liczby wejść.
-			W takim przypadku wyznaczone jednoznacznie rozwiązanie powyższego
-			równania określa najkrótszą sekwencję sterującą
+			W takim przypadku wyznaczone jednoznacznie rozwiązanie
+			równania \ref{suma} określa najkrótszą sekwencję sterującą
 			przeprowadzających układ z danego stanu początkowego do
 			zadanego stanu końcowego.
 			Gdy $m=n$ jest to sekwencja jednoelementowa. Występuje w przypadku
@@ -223,4 +227,50 @@
 			wejścia-wyjścia 1-go rzędu i o odpowiednio dużej liczbie wejść. W przypadku kanałów o
 			dynamice wyższego rzędu, długość sekwencji sterującej nie może być mniejsza niż
 			maksymalny rząd kanału.
-\end{document}
+
+			Powyższe wnioski są prawdziwe przy założeniu, że wartości sygnałów sterujących nie
+			podlegają ograniczeniom. Ograniczone mogą być chwilowe wartości poszczególnych
+			5 sygnałów (próbek): $U_{i min} \leq u_i[k] \leq U_{i max}$ dla
+			$i= 1, 2, \cdots , m$ (ograniczenia amplitudowe).
+			Innego rodzaju ograniczenia, które mogą wystąpić w związku z ograniczoną dynamiką
+			elementów nastawczych (wykonawczych) dotyczą dopuszczalnych przyrostów w czasie
+			poszczególnych sygnałów sterujących: $\Delta U_{i min} \leq \Delta u_i(k) \leq \Delta U_{i max} $ dla $i= 1, 2, \cdots , m$
+
+			Powyższe ograniczenia (o ile występują) muszą być uwzględnione przy rozwiązywaniu
+			równania \ref{suma}.
+
+			W przestrzeni sterowań, obszary sterowań dopuszczalnych, czyli takich
+			ograniczonych
+			amplitudowo i odpowiednio przyrostowo, mają postać m-wymiarowych hiper-
+			prostopadłościanów, w obrębie których poszukujemy rozwiązania dopuszczalnego.
+			Czyli są wartości przestrzeni sterowań są ograniczone prostymi.
+			Dla
+			uproszczenia zakładamy stacjonarność warunków ograniczających, ale dopuszczamy ich
+			niesymetryczność.
+
+			Przy występujących w praktyce ograniczeniach urządzeń fizycznych
+			rozwiązanie równania \ref{suma}, ze względu na
+			najkrótszą sekwencję sterowań realizującą cel sterowania, wymaga rozwiązania
+			liniowego zadania programowania matematycznego z ograniczeniami
+			nierównościowymi. Można w tym celu zastosować metodę SIMPLEX.
+			Wystąpienie czynnych ograniczeń powoduje istotne wydłużenie sekwencji sterującej!
+
+			Wnioski
+			\begin{itemize}
+				\item Istnieje efektywna metoda badania sterowalności liniowego
+					modelu obiektu
+					sterowania, która może być zastosowana do testowania
+					lokalnej sterowalności
+					również obiektu nieliniowego w niewielkim
+					otoczeniu punktu stacjonarnego.
+				\item  Istnieje efektywna metoda badania sterowalności
+					liniowego modelu obiektu
+					sterowania, która może być zastosowana do
+					testowania lokalnej sterowalności
+					również obiektu nieliniowego w niewielkim
+					otoczeniu punktu stacjonarnego.
+				\item Metoda ta pozwala na sporządzenie rankingu wejść
+					pod względem ich zdolności
+					sterowniczych na podstawie indeksów sterowalności.
+			\end{itemize}
+		\end{document}
