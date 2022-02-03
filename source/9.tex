@@ -9,6 +9,11 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{hyperref}
+% More defined colors
+\usepackage[dvipsnames]{xcolor}
+% Required package
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 \begin{document}
 	\maketitle
 	\section{Badanie obserwowalności obiektu}
@@ -19,8 +24,290 @@
 			\dot{x} = Ax(t)+Bu(t) \\
 			y = Cx(t)+Cu(t) 
 		\end{align*}
-		W przypadku sterowalności istotne było wykazanie zależności kompletnej trajektorii
-		wektora stanu (krzywej właściwej, czyli pełnowymiarowej, przebiegającej w n wymia-
-		rowej przestrzeni stanu) od sygnałów sterujących działających w pewnym przedziale
-		czasu.
+		W przypadku sterowalności istotne było wykazanie zależności
+		wektora stanu od sygnałów sterujących działających w pewnym przedziale czasu.
+
+		Niech $n$ będzie rzędem układu. Wtedy 
+		dla przypadku modelu z czasem dyskretnym, do wyznaczenia sterowalności
+		chodziło o stwierdzenie, że kierunki
+		działania wektora sterowań w kolejnych $n$ chwilach próbkowania 
+		rozpinają pełną, $n$-wymiarową przestrzeń wektorową. Spełnienie takiego warunku gwarantuje
+		osiągnięcie dowolnego stanu docelowego z dowolnego stanu początkowego w wyniku
+		właściwego doboru sekwencji decyzji sterujących.
+
+		Model obiektu reprezentuje powiązania "przyczyna-skutek" pomiędzy funkcjami czasu:
+		\begin{equation}
+			u(t)|^{t_k}_{t_0} \rightarrow x(t)|^{t_k}_{t_0} \rightarrow y(t)|^{t_k}_{t_0} 
+		\end{equation}
+
+		(w układzie z czasem ciągłym), albo szeregami czasowymi:
+		\begin{equation}
+			{u_1 u_2 \ldots u_{N-1}} \rightarrow{x_1 x_2 \ldots x_{N}} \rightarrow {y_1 y_2 \ldots y_{N}} \rightarrow
+		\end{equation}
+		w modelu dyskretnym.
+
+		W przypadku sterowalności istotne jest powiązanie
+		\begin{equation}
+			u(t)|^{t_k}_{t_0} \rightarrow x(t)|^{t_k}_{t_0} 
+		\end{equation}
+
+		Jednak jeżeli cel sterowania sformułowano w odniesieniu do trajektorii wyjściowej
+		będącą pełnowymiarową krzywą w przestrzeni wyjść $Y^p$, to mówimy raczej o problemie
+		osiągalności zadanego punktu docelowego pracy ustalonej $y_k= y(t_k)$ z początkowego
+		punktu pracy ustalonej $y_0= y(t_0)$. W takim przypadku warunek rzędu przyjmuje postać:
+		\begin{equation}
+			rank(C \times S) = p
+		\end{equation}
+
+		gdzie: $C$ jest macierzą wyjść obiektu, $S$ jest jego macierzą sterowalności, $p$ -liczbą wyjść.
+		Ponadto, $x_0$ takie, że spełnia warunek 
+		\begin{equation}
+			y_0 = C x_0+ D u_0
+		\end{equation}
+		oraz $x_K$ takie, że spełnia warunek
+		\begin{equation}
+			y_K = C x_K+ D u_K
+		\end{equation}
+		powinny być stanami stacjonarnymi.
+
+		Ustalony punkt pracy winien się charakteryzować stacjonarnością wartości sygnałów
+		wyjściowych czyli brakiem zjawisk przejściowych, co najwyżej występowaniem fluktuacji
+		wokół stałych wartości na wyjściu, powodowanych zakłóceniami losowymi.
+		Stałość sygnałów na wyjściu obiektu nie jest jednak równoznaczna ze stałością stanu
+		obiektu.
+		Aktywna stabilizacja poziomów sygnałów wyjściowych, związana z wymogiem
+		pozostawania obiektu w danym punkcie pracy. Punkt ten jest określany zazwyczaj na podstawie
+		charakterystyk statycznych obiektu i wymaga wewnętrznych oddziaływań
+		dynamicznych, np. kompensujących zakłócenia procesu. W takim przypadku mówimy, że 
+		zmienne stanu są wówczas aktywne dynamicznie.
+		Potocznie obserwację jakiejś wielkości np. pewnej zmiennej stanu utożsamia się z
+		pomiarem tej wielkości. Tak więc obserwowalność
+		niesłusznie utożsamia się z możliwością przeprowadzenia pomiaru.
+		Jest to skojarzenie nieuprawnione, ponieważ obserwowalność jest cechą
+		obiektu, głębszą niż mierzalność. Obserwowalność oznacza bowiem możliwość
+		dokonania obserwacji wartości również tych zmiennych stanu, które nie mogą być
+		bezpośrednio zmierzone, na przykład z powodu braku sensora lub jego uszkodzenia.
+		Mówimy w takim przypadku o odtwarzaniu lub oszacowaniu takich wartości.
+		Oszacowanie jest dokonywane na podstawie dostępnej informacji o obiekcie. Tymi
+		danymi są model matematyczny obiektu oraz zarejestrowane przebiegi sygnałów na
+		wejściach obiektu wraz z wywołanych przez nie sygnałami odpowiedzi na jego wyjściach
+		Warunkami uzyskania oszacowania niemierzalnych zmiennych stanu są:
+		\begin{itemize}
+			\item obserwowalność obiektu
+			\item dostatecznie długi okres obserwacji (tzw. horyzont obserwacji)
+			\item wystarczające pobudzanie obiektu przez sygnały wejściowe (sygnały sterujące
+					oraz zakłócenia mierzalne).
+		\end{itemize}
+		Problem obserwacji polega na wykorzystaniu danych wejściowych i wyjściowych
+		obiektu do oszacowania wektora stanu układu w chwili początkowej
+		przedziału czasu, w którym obserwacja/rejestracja była prowadzona.
+		Symbolicznie można obserwator przedstawić jako blok:
+					\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}
+				% Obswerwator
+				\node [draw,
+				fill=White, 
+				minimum width=6cm, 
+				minimum height=3cm,
+				] (observer) {Obserwator};					
+				% Arrows 
+
+				\draw[-stealth] (observer.east) -- (5, 0 )
+				node[very near end,below ]{$x(t-T)$};
+				\draw[-stealth]  (-5, 0.81 ) -- (observer.165)
+				node[very near start,below ]{$u(t)|^{t_k}_{t_0}$};
+				\draw[-stealth]  (-5, -0.81 ) -- (observer.195)
+				node[very near start,below ]{$x(t)|^{t_k}_{t_0}$};
+				
+			\end{tikzpicture}
+			\caption{Blok obserwatora}
+		\end{figure}
+
+		Aby można było zrealizować takie zadanie, obiekt musi być obserwowalny.
+	\section{Ogólna definicja obserwowalności}
+		Układ o równaniach stanu i wyjścia postaci:
+		\begin{figure}[H]
+			\begin{align*}
+				\dot{x}(t) = f(x(t), u(t),t) \\ 
+				y(t) = h(x, u, t)
+			\end{align*}
+			\label{uklad}
+		\end{figure}	
+		jest obserwowalny, jeżeli przy dowolnym sterowaniu $u(t)$ w przedziale $<t0, t_0+ T)$, w
+		chwili $t0+ T$ można wyznaczyć stan układu w chwili początkowej $x(t0)$, na podstawie
+		zarejestrowanych sygnałów wyjściowych $y(t)|^{0+T}_t$
+		oraz sygnałów wejściowych $u(t)|^k_{t_0}$ , gdzie $t_0$ oznacza czas 
+		rzeczywisty rozpoczęcia rejestracji/obserwacji, a $T$ długość horyzontu obserwacji.
+
+		Załóżmy, że $dim(x) = dim(f) = n$. O wektorowej, nieliniowej funkcji wyjścia $h(x , u, t)$
+		załóżmy, że jest różniczkowalna względem wektora stanu $n$-krotnie, względem wektora
+		sterowań $m$-krotnie i względem czasu jednokrotnie.
+
+		Zdefiniujmy operator różniczkowy Lapunowa w następujący sposób:
+		
+		\begin{equation}
+			L\{h\} \equiv \frac{\delta h}{\delta x} + \frac{\delta h}{\delta u} \dot{u} + \frac{\delta h}{\delta t}
+		\end{equation}
+
+		Zastosujmy $(n-1)$-krotnie operator Lapunowa do funkcji wyjść $h$.
+		Otrzymamy równania definiujące fazowe zmienne stanu dla układu \ref{uklad}:
+
+		\begin{align*}
+			y = h(x,u,t) \\ 
+			\dot{y} = L\{h(x,u,t)\} \\ 
+			\ldots \ldots \ldots \ldots \\
+			y^{(n-1)} = L^{(n-1)}\{h(x,u,t)\} \\ 
+		\end{align*}
+		Jest to układ $p$ równań algebraicznych i $p*(n-1)$ równań różniczkowych 1-go rzędu,
+		definiujących $p$ podwektorów fazowych dla poszczególnych wyjść obiektu. Wymiary tych
+		podwektorów odpowiadają najwyższym rzędom odpowiednich równań wejścia-wyjścia.
+		Warunkiem koniecznym i wystarczającym istnienia rozwiązania takiego układu równań
+		ze względu na $x$ , a tym samym lokalnej obserwowalności układu \eqref{uklad} jest spełnienie
+		warunku:
+		\begin{equation}
+			rank  \left\{ \left(
+			 \left. \frac{\delta h}{\delta x} \right)^T
+			 \right\vert
+			 \left( \frac{\delta }{\delta x} L\{h\} \right)^T 
+			 \ldots 
+			 \left( \frac{\delta }{\delta x} L^{(n-1)}\{h\} \right)^T
+			 \right\} = n
+		\end{equation}
+		gdzie $n$ jest sumą wymiarów $p$ podwektorów fazowych poszczególnych wyjść. Macierz
+		występująca w warunku jest macierzą Hankela.
+		Dla modelu liniowego R. Kalman (1st IFAC Congress, Moskwa, 1960) podał prosty,
+		algebraiczny warunek konieczny i wystarczający obserwowalności obiektu.
+		W tym celu należy utworzyć tzw. macierz obserwowalności na podobnej zasadzie jak
+		tworzona była macierz sterowalności:
+		\begin{equation}
+			O = [ C CA CA^2 \ldots CA^{n-1}]^T
+		\end{equation}
+		gdzie $n$ jest rzędem układu. Macierz $O$ składa się z $n$
+		bloków $p$-kolumnowych, jej wymiary to $n \times (n \cdot p)$ .
+		Warunkiem koniecznym i wystarczającym obserwowalności układu o modelu liniowym
+		w przestrzeni stanu jest:
+		\begin{equation}
+			rank(O) = n
+		\end{equation}
+		Analogicznie jak w przypadku analizy sterowalności obiektu typu MIMO,
+		przeprowadzonej na poprzednim wykładzie, można ustalić, czy w obiekcie występują
+		zbędne z punktu widzenia pozyskiwania informacji o procesie, wyjścia. Można także
+		sporządzić ranking wyjść, z punktu widzenia ich znaczenia dla efektywnego
+		pozyskiwania informacji o stanie obiektu.
+
+		Dany model układu można w ogólnym przypadku podzielić na część sterowalną i
+		obserwowalną (S-O), sterowalną, ale nieobserwowalną (S-nO), obserwowalną, ale
+		niesterowalną (nS-O) oraz niesterowalną i nieobserwowalną (nS-nO). Dla projektanta
+		układu sterowania model układu musi być typu S-O. Jeżeli tak nie jest tp należy rozważyć
+		uzupełnienie obiektu o dodatkowe urządzenia sterujące i sensory, by doprowadzić do
+		sytuacji, że jest będzie on typu S-O.
+
+		Dla obiektu obserwowalnego można zaprojektować obserwator. W przypadku
+		analogowego modelu z czasem ciągłym obserwator może być zrealizowany sprzętowo,
+		jako dedykowany układ przetwarzania sygnałów analogowych, albo po cyfryzacji modelu
+		, jako algorytm przetwarzania próbek sygnałów wyjściowych i wejściowych w czasie rzeczywistym.
+
+		\section{Liniowy obserwator analogowy (D. Luenberger, 1968)}
+
+		Obserwator liniowy $r$-go rzędu liniowego obiektu $n$-go rzędu określają trzy macierze:
+		\begin{equation}
+			F \in M(r, r), H \in M(r, p), G \in M(r, m),
+		\end{equation}
+		gdzie symbol $M(r, r)$ oznacza macierz kwadratową o wymiarach $r \times r$, $M(r, p)$ macierz
+		prostokątną o wymiarach, $r \times p$, $M(r, m)$ macierz prostokątną o wymiarach $r \times m$.
+		$n$ – to wymiar wektora stanu obserwowanego obiektu, $p$ – liczba wyjść obserwowanego
+		obiektu, $m$ – liczba jego wejść.
+		Jeżeli $r = n$, to mamy przypadek obserwatora pełnego rzędu czyli takiego 
+		szacującego wszystkie
+		zmienne stanu obiektu na podstawie zapisów sygnałów wejściowych i wyjściowych.
+		Gdy $r < n$, to mamy przypadek obserwatora zredukowanego szacującego tylko część zmiennych stanu.
+		Równanie stanu obserwatora:
+		\begin{equation}
+			\dot{z}(t) = F z(t) + H y(t) + G u(t)
+		\end{equation}
+		gdzie $z$ - wektor stanu obserwatora, a rozwiązanie równania to $z(t)$ dla $(t > t_0)$ , gdzie $t_0$ to
+		początek obserwacji.
+
+		Macierze $F, H, G$ określają obserwator liniowy, jeżeli istnieją takie macierze $V \in M(n, p)$
+		oraz $W \in M(n, r)$, że dla dowolnego sterowania $u(t)$ gdzie $(t> t_0)$ ,
+		\begin{equation}
+			x_E(t) = V y(t) + W z(t)
+		\end{equation}
+		jest estymatorem stanu obiektu i spełniony jest warunek:
+		\begin{equation}
+			\lim_{t \to \inf} \left. \left. \right\vert \right\vert 
+			x(t) - x_E(t) 
+			\left. \left. \right\vert \right\vert 
+			\to
+			0
+			\label{warunek}
+		\end{equation}
+		Należy zauważyć, że oszacowanie $x_E (t)$ wektora stanu obiektu, zwane estymatą 
+		stanu, wynika z wartości chwilowych wektora sygnałów
+		wyjściowych obiektu i z chwilowych wartości wektora stanu obserwatora. Warunek \eqref{warunek}
+		oznacza, że oczekujemy asymptotycznej zbieżności estymaty do wartości rzeczywistej
+		przy nieskończonym horyzoncie obserwacji. Zbieżność estymaty wektora stanu do
+		wartości rzeczywistej wektora obiektu sterowania z reguły ma charakter asymptotyczny
+		$(T \to \inf)$ , pod warunkiem, że obserwator jest stabilny.
+		W skończonym czasie jest możliwe jedynie zbliżenie się do wartości rzeczywistej:
+		\begin{equation}
+			\lim_{t \to t_0+T} \left. \left. \right\vert \right\vert 
+			x(t) - x_E(t) 
+			\left. \left. \right\vert \right\vert 
+			< \varepsilon
+		\end{equation}
+	\section{Cecha wykrywalności}
+		O parze macierzy $(A, C)$ z modelu \ref{uklad} mówimy, że posiada cechę wykrywalności, jeżeli
+		istnieje taka macierz $L \in M(n, p)$, że macierz $A + LC$ jest stabilna.
+
+		Warunkiem koniecznym wykrywalności jest obserwowalność obiektu, ale nie jest to
+		warunek wystarczający. Bowiem z wykrywalności wynika obserwowalność, ale z
+		obserwowalności nie wynika wykrywalność, gdyż dla konkretnych $A, C$ może nie istnieć
+		$L$ spełniająca warunek z definicji. Oznacza to, że w takim przypadku nie można
+		skonstruować stabilnego obserwatora.
+
+		Jeżeli jednak warunek ten jest spełniony, to obserwator pełnego rzędu $(r=n)$ jest
+		określony następującymi równaniami stanu i wyjścia:
+		\begin{align*}
+			\dot{z}(t) = [A + LC]z(t) - Ly(t) + Bu(t) \\ 
+			x_e(t) = z(t)
+		\end{align*}
+		W takim przypadku
+		\begin{equation}
+			F = [A+LC], H = -L , G=B, V=0, W=I
+		\end{equation}
+		Czyli oszacowaniem wartości wektora stanu obiektu w chwili początkowej $t_0$
+		jest chwilowa wartość wektora stanu obserwatora pełnego rzędu $z(T)$
+		dostępna po upływie czasu $T$.Zakładamy przy tym zerowe warunki początkowe obserwatora.
+		Tymczasem rzeczywisty stan obiektu, istotny z punktu widzenia sterowania jest już wówczas równy:
+		\begin{equation}
+			x(t_0+T) = e^{A(t_0+T)} x(t_0) + \int^{t_0 + T}_{t_0}e^{A(t0 +T−\tau)} Bu(\tau)d\tau
+		\end{equation}
+		Łatwo jednak zaktualizować (odnieść do bieżącej chwili) czyli obliczyć "in no time"
+		bieżącą estymatę wektora stanu posługując się wzorem:
+		\begin{equation}
+			x_E(t) = e^{A(t)} x_E(t_0)+\int^t_{t_0}e^{A(t−\tau)} Bu(\tau)d\tau
+		\end{equation}
+		przy czym $t > t_0 + T$. $A, B$ są macierzami modelu w przestrzeni stanu obiektu. Jest to
+		aktualizacja estymaty oparta o znany model obiektu. Istotne jest jednak, by moc
+		obliczeniowa komputera sterującego pozwalała zrealizować obliczenia/symulację w
+		bardzo krótkim czasie w porównaniu z dynamiką rzeczywistego obiektu.
+
+		Fazę obserwacji bądź też zbierania danych można skrócić jeśli dopuścimy
+		odchyłkę estymaty od wartości rzeczywistego stanu obiektu.
+		Realizujemy w trakcie zbierania danych specjalnie zaprojektowany program 
+		stymulacji obiektu testowymi sygnałami wejściowymi, czyli przeprowadzając 
+		tzw. czynny eksperyment identyfikacji.
+		Warto zauważyć, że gdy obiekt jest stabilny, to błąd estymacji $e(t)=x(t)-x_E(t)$ maleje
+		asymptotyczne do zera ze wzrostem $t$:
+		\begin{equation}
+			\lim_{t \to \inf} [ x(t) x_E (t)] = \lim_{t \to \inf} e^{At}[ x(t_0) x_E (t_0)] = 0 
+		\end{equation}
+		Aktualizacji na bieżąco dokonuje obserwator. Dostarcza on na bieżąco oszacowanie
+		wartości wektora stanu w chwili wcześniejszej od chwili bieżącej o $T$.
+		Warto porównać ją z wartościami
+		generowanymi na modelu symulacyjnym, po przyjęciu jako stan początkowy $x_E (t_0)$ –
+		wyniku pierwszej (może być, że jednorazowej) pracy obserwatora w oparciu o zapisy
+		sygnałów w przedziale czasowym $[t_0 , t_0+ T)$.
 \end{document}
