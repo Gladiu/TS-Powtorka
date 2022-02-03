@@ -35,4 +35,150 @@
 		\end{align*}
 		gdzie wskaźnik górny $^E$ wskazuje, że jest to estymata wektora stanu.
 		Zdefiniujmy wektor residuum układu w następujący sposób:
+		\begin{equation}
+			r_k = y_k - y^E_k
+		\end{equation}
+		Gdzie 
+		\begin{equation}
+			y^E_k = Cx^E_k
+		\end{equation}
+		Jest to różnica pomiędzy rzeczywistą wartością na wyjściu obiektu w dyskretnej chwili $k$, a
+		wartością na wyjściu modelu, obliczona na podstawie oszacowanego stanu w chwili $k$.
+		Można wykorzystać obserwator do wykrywania uszkodzeń w obiekcie, objawiających się
+		przez wystąpienie wektora sygnałów awaryjnych $f_k$ (zdarzeń) w chwili $k$. Skutki awarii
+		propagują się w układzie dynamicznym:
+		\begin{equation}
+			x_{k+1} = F f_k
+		\end{equation}
+		Powyższe równanie to model dynamiki awarii. Jeżeli awaria $f_k$ powoduje skutki strukturalne, to
+		$F = F_k$ (model niestacjonarny).
+		
+		Cały czas rozważając model dyskretny możemy zdefiniować
+		macierz $F = [ f_{ij} ]$, która jest macierzą o elementach $0$, albo $1$. $f_{ij} = 1$ oznacza, że awaria $j$-tego
+		typu ma wpływ na $i$-tą zmienną stanu $i$ skutkuje skokową zmianą wartości prędkości
+		zmian $i$-tej zmiennej stanu równą $f_{ij}[k]$ przed wystąpieniem awarii
+		$ f_{ij}[0]= f_{ij}[1]= \ldots f_{ij}[k]= 0 $.
+		$f_j[k]$ jest ilościową miarą skutku awarii $j$-tego typu w chwili $k$-tej. Na przykład jeżeli
+		awaria polega na całkowitym uszkodzeniu sensora mierzącego wartość $i$-tej zmiennej
+		stanu, to wyniki pomiaru $x_i[k] = x_i[k] = \ldots x_i[N] = 0$ (takie wartości „trafią” do sytemu
+		sterowania, gdy tymczasem rzeczywiste ich wartości nadal ewoluują i wynikają z równań
+		dynamiki obiektu. $f_{ij} = 0$ oznacza, że awaria $j$-tego typu nie wpływa na prędkość zmian $i$-
+		tej zmiennej stanu.
+
+		Jeżeli obiekt sterowania jest zaburzany przez sygnały zakłócające, a przynajmniej część
+		z nich jest mierzalna ($d_k$ - wektor mierzalnych zakłóceń w chwili $k$), to mogą być one
+		wykorzystane w procesie obserwacji na równych prawach z sygnałami sterującymi,
+		ponieważ również stanowią pobudzenie dynamiczne obiektu, objawiające się skutkami
+		na wyjściu.
+		\begin{equation}
+			x_{k+1} = Ed_k
+		\end{equation}
+		powyższy model jest modelem propagacji zakłóceń do zmiennych stanu obiektu. Macierz $E$ jest
+		macierzą o elementach $0$, albo $1$. $d_{ij} = 1$ oznacza, że $j$-te zaburzenie ma wpływ na $i$-tą
+		zmienną stanu i skutkuje skokową zmianą wartości prędkości zmian $i$-tej zmiennej stanu
+		równą $d_j[k]$ (przed wystąpieniem zaburzenia $d_j[0]= d_j[1]= \ldots d_j[k-1]= 0$).
+		$d_j[k]$ jest amplitudą $j$-tego zaburzenia w chwili $k$-tej. Po wystąpieniu, zaburzenie może
+		ewoluować w czasie, czego miarą są wyniki jego pomiaru $d_{ij}[k], dij[k+1], dij[k+2], \ldots $ 
+
+		Rozszerzony model dynamiki obiektu, uwzgledniający ewentualne awarie oraz
+		wykorzystujący pomiary zakłóceń ma postać:
+		\begin{figure}[H]
+			\begin{align*}
+				x_{k+1} = Ax_k + Bu_k + Ed_k + Ff_k \\ 
+				y_k = C x_k + Du_k
+			\end{align*}
+			\label{rozszerzonymodel}
+		\end{figure}
+		Gdzie $\Delta y = y_k - C x_k $ reprezentuje (obserwowane bezpośrednio) na wyjściu obiektu skutki
+		awarii torów pomiarowych – różnicę pomiędzy zmierzonymi na wyjściu wartościami sygnałów
+		wyjściowych, a wartościami wynikającymi z aktualnego, rzeczywistego stanu obiektu.
+
+		Równanie obserwatora pełnego rzędu (dim x = n) dla modelu rozszerzonego \ref{rozszerzonymodel} przyjmuje
+		postać:
+		\begin{figure}[H]
+			\begin{align*}
+				x^E_{k+1} = [A - LC]x^E_k + Ly_k + Bu_k + Ed_k + Ff_k \\ 
+				\Delta y = y_k - Cx^E_k
+			\end{align*}
+			\label{pelnyobserwator}
+		\end{figure}
+		Warto zauważyć, że rozszerzenie modelu obiektu nie narusza jego ewentualnej
+		wykrywalności. Nie narusza bowiem obserwowalności układu (macierze $A$, $C$ nie uległy
+		zmianie w wyniku rozszerzenia modelu) oraz nie zmienia rozkładu wartości własnych
+		macierzy $[A - LC]$.
+	\section{Obserwator diagnostyczny}
+		Celem obserwatora jest w tym przypadku wykrywanie uszkodzeń w systemie. Zastosowanie
+		banku obserwatorów diagnostycznych ponadto pozwala zlokalizować uszkodzenie.
+		Aktualny błąd estymacji stanu $e_k$ jest równy:
+		\begin{equation}
+			e_k = x_k - x^E_k
+		\end{equation}
+		Tym samym residuum jest równe 
+		\begin{equation}
+			r_k  = C e_k - \Delta y
+		\end{equation}
+		Odejmując równania \ref{rozszerzonymodel} oraz \ref{pelnyobserwator} otrzymujemy
+		równanie dynamiki błędu estymacji stanu:
+		\begin{equation}
+			e_{k+1} = [ A - LC ] e_k + Bu_k + Ed_k + Ff_k
+			\label{bladestymacjistanu}
+		\end{equation}
+		Jeżeli macierz $A – LC$ jest stabilna (jej wartości własne leżą we wnętrzu okręgu
+		jednostkowego na płaszczyźnie zespolonej), to oznacza to, że obserwator jest stabilny.
+		Jego wektor stanu zmierza asymptotycznie do punktu równowagi. Po zaniknięciu
+		przebiegów przejściowych związanych z początkową nieznajomością stanu obiektu, o ile
+		w systemie nie wystąpiła jak dotąd awaria i nie był on zaburzany przez zakłócenia, to na
+		podstawie \eqref{bladestymacjistanu} można stwierdzić, że błąd estymacji stanu obiektu asymptotycznie
+		zmierza do zera. Awaria lub zakłócenie zaburzają osiągnięty przez system stan
+		równowagi.
+
+		Stad pojawienie się niezerowych próbek błędu estymacji w stanie ustalonym, świadczy o
+		pojawieniu się jednego lub obu czynników zaburzających. Ponieważ w modelu obiektu
+		ujęto zakłócenia mierzalne, to tę grupę czynników można zidentyfikować na podstawie
+		ich aktualnego pomiaru stwierdzając wystąpienie lub nie wystąpienie zaburzenia. Tym
+		samym pozwala związać przyczynę zaburzenia z ewentualną awarią, albo z zakłóceniem
+		niemierzalnym.
+
+		To spostrzeżenie jest podstawa metody detekcji awarii, opartej o zastosowanie
+		obserwatora rozszerzonego modelu obiektu. Awaria, ze względu na swój skokowy
+		charakter powoduje nieciągłość rzeczywistej zmiennej stanu. Jeżeli jest to zmienna
+		mierzalna, to wykrycie takiej nieciągłości (ew. przekroczenia pewnej wartości progowej
+		przez jej aktualną różnicę skończoną 1-go rzędu) jest dobrą przesłanką do
+		wnioskowania o awarii, ale nie wskazuje konkretnego źródła awarii.
+
+		Zastosowanie w tym celu banku obserwatorów, z których jest każdy oparty o model
+		obiektu rozszerzonego o model konkretnej, pojedynczej awarii pozwala daną awarię
+		zlokalizować.
+
+		Niestety, w estymatorze stanu (obserwatorze, który rekonstruuje niemierzalne zmienne
+		stanu), nieciągłości estymaty ujawnią się z pewnym opóźnieniem (zależnym od dynamiki
+		obserwatora – rozkładu wartości własnych jego macierzy stanu: $A – LC$). Biorąc pod
+		uwagę szybkość współczesnych mikrokontrolerów, pomijamy znikome opóźnienie
+		związane z czasem obliczenia kolejnej estymaty, tak więc jest to problem związany z
+		oczekiwaniem na kolejne dane, wykorzystywane do obliczeń na bieżąco.
+		Często niemierzalne zmienne stanu charakteryzują się dużą dynamiką. Wówczas
+		pewnym ułatwieniem detekcji może być użycie obserwatora zredukowanego, który
+		powinien charakteryzować się również szybką dynamiką, co powinno skrócić czas od
+		wystąpienia awarii do jej wykrycia poprzez estymatę. Inną możliwość detekcji daje
+		śledzenie nieciągłości sekwencji wyjściowych.
+	\section{Synteza obserwatora zredukowanego}
+		Obserwator zredukowany, albo obserwator niepełnego rzędu, znajduje zastosowanie w
+		sytuacji, gdy część zmiennych stanu obiektu (zmienne wewnętrzne) nie może być zmierzona
+		bezpośrednio, ale wymaga rekonstrukcji na podstawie znajomości modelu obiektu oraz
+		danych wejścia-wyjścia.
+		Podzielmy wektor stanu obiektu na dwa podwektory
+		\begin{equation}
+			x_1, x_2: x = [ x_1, x_2] 
+		\end{equation}
+		, przy czym w $x_1$
+		pogrupowano dostępne pomiarowo zmienne stanu układu, a w $x_2$ - pozostałe.
+		\begin{equation}
+			dim(x) = n, dim(x_2) = l, dim(x_1) = n-l.
+		\end{equation}
+		
+		Przestrzeń stanu $X$ można podzielić na dwie podprzestrzenie $X_1$ oraz $X_2$, których suma
+		prosta jest równa $X$:
+		\begin{equation }
+			X = X_1 ⊕ X_2
+		\end{equation}
 \end{document}
