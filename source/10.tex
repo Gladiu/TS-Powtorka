@@ -1,0 +1,38 @@
+\author{Kasiński}
+\title{Wykład 10}
+\documentclass{article}
+\usepackage[margin=1.4cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{polski}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+% More defined colors
+\usepackage[dvipsnames]{xcolor}
+% Required package
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\begin{document}
+	\maketitle
+	\section{Synteza obserwatora dla rozszerzonego modelu obiektu}
+		Do konstrukcji algorytmu obserwatora wykorzystuje się model dyskretny (liniowy)
+		obiektu sterowania:
+		\begin{align*}
+			x_{k+1} = Ax_k + Bu_k \\ 
+			y_k = C x_k + Du_k
+		\end{align*}
+		Obserwator rekonstruuje wartość wektora stanu $x_{k-N}$
+		na podstawie danych, w postaci zapamiętanych próbek $y_i$ oraz $u_i$,
+		\begin{equation}
+			i=k-N, k-N+1, \ldots , k
+		\end{equation}
+		Równanie różnicowe obserwatora pełnego ma postać:
+		\begin{align*}
+			z_{k+1} = [A-LC] z_k - Ly_k + Bu_k \\ 
+			x^E_k = z_k
+		\end{align*}
+		gdzie wskaźnik górny $^E$ wskazuje, że jest to estymata wektora stanu.
+		Zdefiniujmy wektor residuum układu w następujący sposób:
+\end{document}

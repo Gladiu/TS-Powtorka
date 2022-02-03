@@ -282,12 +282,12 @@
 		dostępna po upływie czasu $T$.Zakładamy przy tym zerowe warunki początkowe obserwatora.
 		Tymczasem rzeczywisty stan obiektu, istotny z punktu widzenia sterowania jest już wówczas równy:
 		\begin{equation}
-			x(t_0+T) = e^{A(t_0+T)} x(t_0) + \int^{t_0 + T}_{t_0}e^{A(t0 +T−\tau)} Bu(\tau)d\tau
+			x(t_0+T) = e^{A(t_0+T)}x(t_0)+\int^{t_0+T}_{t_0}e^{A(t0+T-\tau)}Bu(\tau)d\tau
 		\end{equation}
 		Łatwo jednak zaktualizować (odnieść do bieżącej chwili) czyli obliczyć "in no time"
 		bieżącą estymatę wektora stanu posługując się wzorem:
 		\begin{equation}
-			x_E(t) = e^{A(t)} x_E(t_0)+\int^t_{t_0}e^{A(t−\tau)} Bu(\tau)d\tau
+			x_E(t) = e^{A(t)} x_E(t_0)+\int^t_{t_0}e^{A(t-\tau)} Bu(\tau)d\tau
 		\end{equation}
 		przy czym $t > t_0 + T$. $A, B$ są macierzami modelu w przestrzeni stanu obiektu. Jest to
 		aktualizacja estymaty oparta o znany model obiektu. Istotne jest jednak, by moc
