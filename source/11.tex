@@ -1,5 +1,5 @@
 \author{Kasiński}
-\title{Wykład 11}
+\title{Wykład 12}
 \documentclass{article}
 \usepackage[margin=1.4cm]{geometry}
 \usepackage[utf8]{inputenc}
@@ -16,5 +16,109 @@
 \usetikzlibrary{positioning}
 \begin{document}
 	\maketitle
+	\section{Stabilność nieliniowych obiektów sterowania}
+		Stabilny układ dynamiczny, to taki układ, który startując z niezerowego stanu początkowego
+		, pozostaje w tym otoczeniu. Zamiast punktu pracy może to być trajektoria
+		nominalna zdefiniowana w przestrzeni stanu. Wówczas, za stabilny uznamy układ, który
+		podąża wskutek odpowiedniego sterowania wzdłuż tej trajektorii, a jego stan pozostaje w
+		każdej chwili w niewielkim otoczeniu trajektorii nominalnej, a trajektoria rzeczywista nie oddala
+		się od nominalnej w każdej chwili t więcej niż o $\varepsilon$.
+		Układ równań stanu nieliniowego/niestacjonarnego obiektu sterowania;
+		\begin{equation}
+			\dot{x}(t) = f(x(t), u(t), t)
+			\label{nieliniowy-niestacjonarny-obiekt-sterowania}
+		\end{equation}
+		Układ ten jest $n$-tego rzędu, o $m$ sygnałach sterujących ($dim(x) = n, dim(u) = m$). Jest to układ
+		nieautonomiczny. Załóżmy, ze jest on sterowany z zastosowaniem nieliniowych i
+		niestacjonarnych praw sterowania typu sprzężenie zwrotne od stanu:
+		\begin{equation}
+			u = g(x,t)
+		\end{equation}
+		gdzie $m$-wymiarowa, wektorowa, nieliniowa, jawnie zależna od czasu funkcja $g$ jest funkcją
+		sprzężeń zwrotnych. Jawna zależność od czasu
+		prawa sterowania odpowiada realizacji pewnego programu sterowania, zmiennego w czasie
+		rzeczywistym, bezpośrednio po wytrąceniu obiektu ze stanu równowagi i występuje np. w
+		układach sterowania adaptacyjnego. Po podstawieniu jej do równania \eqref{nieliniowy-niestacjonarny-obiekt-sterowania}
+		dokonujemy tzw. autonomizacji modelu obiektu:
+		\begin{equation}
+			\dot{x}(t) = f(x(t), g(x(t),t),t)
+		\end{equation}
+		by po przekształceniach (ponownych pogrupowaniach zmiennych stanu) otrzymać model
+		dynamiki układu zamkniętego:
+		\begin{equation}
+			\dot{x}(t) = f^*(x(t), t)
+			\label{model-dynamiki-ukladu-zamknietego}
+		\end{equation}
+		gdzie $f^*$ jest "przebudowaną" funkcją momentum. $f$ zostaje zmodyfikowana przez
+		wprowadzenie funkcji $g$ w miejsce $u$, możemy stwierdzić, żę $f$ jest superpozycją nad $g$.
+		\eqref{model-dynamiki-ukladu-zamknietego} jest modelem dynamiki nieliniowego układu zamkniętego.
 
+		Rozwiązaniem układu $n$ równań różniczkowych 1-go rzędu jest (w przypadku nie
+		zdegenerowanym) właściwa, $n$-wymiarowa krzywa parametryczna $x(t)$ w $n$-wymiarowej
+		rozmaitości różniczkowej stanu zwana trajektorią stanu. Parametrem tej krzywej jest czas $t$.
+		
+		\begin{verbatim}
+			Nieliniowy układ dynamiczny opisany równaniem \eqref{model-dynamiki-ukladu-zamknietego}
+			nazywamy autonomicznym, jeżeli funkcja $f^*$ nie zależy jawnie od $t$.
+		\end{verbatim}
+
+		W zasadzie wszystkie układy fizyczne nie są autonomiczne (gdyż się starzeją, zużywają), ale
+		jeżeli zmiany ich właściwości są wolnozmienne w zestawieniu z dynamiką zmian ich stanu, to
+		możemy je traktować jako autonomiczne w określonych przedziałach czasowych.
+		Nawet obiekt, którego wystarczająco dokładnym modelem dynamiki jest model liniowy w
+		przestrzeni stanu, po zastosowaniu nieliniowych reguł sterowania opartych np. o zasadę
+		sprzężeń zwrotnych, staje się nieliniowym systemem dynamicznym. A jeżeli reguła
+		sterowania zawiera czynnik czasu, to dodatkowo staje się systemem nieautonomicznym.
+		\begin{verbatim}
+			OBIEKT LINIOWY + REGULATOR LINIOWY = LINIOWY SYSTEM DYNAMICZNY
+		\end{verbatim}
+
+		Obiekt sterowania o macierzach ($A$, $B$) modelu w przestrzeni stanu oraz regulator. Daje w rezultacie
+		System autonomiczny, o zmodyfikowanej macierzy stanu $[A+KB]$ – o przesuniętych biegunach
+		systemu w następstwie odpowiedniego doboru elementów macierzy $K$. Macierz ta zawiera współczynniki
+		wzmocnień odpowiednich pętli ujemnych sprzężeń zwrotnych, stabilizujących obiekt
+		niestabilny lub poprawiających jego zapasy stabilności.
+		\begin{verbatim}
+			OBIEKT LINIOWY + REGULATOR NIELINIOWY = NIELINIOWY SYSTEM DYNAMICZNY
+			OBIEKT LINIOWY + REGULATOR PROGRAMOWANY = SYSTEM NIEAUTONOMICZNY
+		\end{verbatim}
+		Trajektorię stanu może stanowić pojedynczy punkt w przestrzeni stanu zwany jest wówczas
+		punktem równowagi trwałej.
+		\begin{verbatim}
+			Def. Stan $x_r$ nazywamy stanem równowagi trwałej, jeżeli z tego że dla pewnego $t$ $x(t) = x_r$
+			wynika, że dla dowolnego $\tau > t x(\tau) = x_r$.
+		\end{verbatim}
+		Tym samym mamy, że $f(x_r) = 0$, czyli że punkt równowagi trwałej jest punktem stacjonarnym
+		układu autonomicznego.
+		Istnieją jeszcze inne punkty stacjonarne poza punktami równowagi trwałej np. punkty
+		równowagi nietrwałej/chwiejnej.
+		Model liniowy ma tylko jeden punkt równowagi trwałej: $x_r = 0$ gdy macierz układu $A$ jest
+		pełnego rzędu. W przeciwnym wypadku ma on nieskończenie wiele
+		punktów równowagi, czyli gdy defekt rzędu jest równy jeden: $rank(A) = n-1$, to miejscem
+		geometrycznym punktów równowagi jest prosta w przestrzeni stanu; a gdy $rank(A) = n-2$, jest
+		to pewna płaszczyzna w $n$-wymiarowej przestrzeni stanu, czyli punkty równowagi nie są
+		wówczas izolowane – nie są zbiorami miary zero. Ogólnie można ten warunek zapisać, że
+		\begin{equation}
+			x_r \in Ker(A)
+		\end{equation}
+		W przypadku modeli nieliniowych rzecz przedstawia się odmiennie. Mogą one mieć więcej niż
+		jeden izolowany punkt stacjonarny, w tym więcej niż jeden punkt równowagi trwałej,
+		Takie punkty zwane są atraktorami i są lokalnymi centrami tzw. obszarów przyciągania
+		bądź też basenów atrakcji. Ilość punktów równowagi nie wiąże się z utratą rzędu
+		rozmaitości stanu, nawet tej nieliniowej nieliniowej przestrzeni stanu.
+		W przypadku utraty pełnej wymiarowości przez rozmaitość stanu, czyli nastąpienia tzw. defektu rzędu, punkty
+		stacjonarne tworzą podrozmaitości osobliwe,
+		o wymiarowości zależnej od stopnia defektu rzędu rozmaitości stanu. W takim
+		przypadku mówimy o ko-wymiarze podrozmaitości osobliwej. Szczególnym przypadkiem są
+		np. krzywe zamknięte jako zbiory stacjonarne tzw. orbity np. kołowe, eliptyczne.
+		Jeżeli w konkretnym przypadku mamy kilka izolowanych punktów stacjonarnych, to
+		każdorazowo dokonuje się równoległego przeniesienia układu współrzędnych stanu
+		tak, aby jego początek pokrywał się z wybranym do analizy punktem stacjonarnym.
+		Mówimy wówczas o lokalnym, związanym z danym punktem układzie współrzędnych stanu.
+		Redefiniujemy wówczas zmienne stanu w następujący sposób:
+		\begin{equation}
+			\xi(t) = x(t)-x_r \to x(t) = \xi(t) + x_r \to \xi = f^*(\xi+x_r),	
+		\end{equation}
+	\section{Ruch, trajektoria nominalna, stabilność ruchu względem trajektorii nominalnej}
+		Rozważmy następujące pytanie
 \end{document}
