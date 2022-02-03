@@ -120,5 +120,68 @@
 			\xi(t) = x(t)-x_r \to x(t) = \xi(t) + x_r \to \xi = f^*(\xi+x_r),	
 		\end{equation}
 	\section{Ruch, trajektoria nominalna, stabilność ruchu względem trajektorii nominalnej}
-		Rozważmy następujące pytanie
+		\subsection{Pytanie}
+			Czy układ dynamiczny utrzyma się na swojej trajektorii nominalnej (trajektorii zadanej, którą
+			powinien odtwarzać) jeżeli jego stan zostanie poddany lekkiemu zaburzeniu (perturbacji)?
+			Na to pytanie można odpowiedzieć poprzez redukcję powyższego problemu do badania
+			stabilności w otoczeniu punktu równowagi równoważnego układu nieautonomicznego.
+
+			Niech $x^*(t)$ oznacza rozwiązanie równania $\dot{x}(t) = f^*(x(t),t)$, przy warunku
+			początkowym $x^*(0) = x_0$ równym warunkowi początkowemu trajektorii nominalnej,
+
+			Niech $x^*(0) = x_0 + \Delta x$, gdzie $\Delta x$ oznacza zaburzenie stanu początkowego.
+			Wówczas $x(t)$ - rozwiązanie równania dynamiki $ \dot{x}(t) = f^*(x(t),t)$ dla zaburzonego
+			stanu początkowego jest trajektorią zaburzoną. Zdefiniujmy dewiację/odchyłkę
+			trajektorii zaburzonej względem trajektorii nominalnej jako:
+			\begin{equation}
+				e(t) = x(t) – x^*(t)
+			\end{equation}
+			Równanie dynamiki odchyłki ma postać:
+			\begin{equation}
+				\dot{e}(t) = f^*(x^*(t)+e(t),t) - f^*(x^*(t),t) = h(e(t),t)
+			\end{equation}
+			gdzie $e(0) = \Delta x$
+			Jeżeli $h(0,t) = 0$, to wprowadzony (uchybowy) układ dynamiczny ma punkt równowagi
+			w początku przeniesionego układu współrzędnych stanu.
+
+			Dynamika perturbacyjna $\dot{e}(t) = h(e(t),t)$ jest nieautonomiczna ze względu na obecność
+			w funkcji $h$ trajektorii nominalnej $x^*(t)$ będącej jawną funkcją czasu, którą można
+			interpretować jako swego rodzaju wymuszenie zewnętrzne dynamiki perturbacyjnej.
+		\subsection{Przykład}
+			Dany jest nieliniowy układ autonomiczny o równaniu:
+			\begin{equation}
+				m\ddot{x} + k_1x + k_2 x_3 = 0
+			\end{equation}
+			Równanie opisuje ruch o jednym stopniu swobody środka masy $m$, osadzonej na twardej
+			sprężynie z pomijalnym tłumieniem.
+			Jak wygląda trajektoria nominalna $x^*(t)$, przy warunku początkowym $x^*(0) = x_0$ i jak
+			wygląda trajektoria $x(t)$, po zaburzeniu warunku początkowego $\Delta x$ ?
+			Równanie dynamiki perturbacyjnej ma postać:
+			\begin{equation}
+				m\ddot{e} + k_1e + k_2\{e_3 + 3e^2x*(t) + 3e [x^*(t)]2 \}= 0.
+			\end{equation}
+			Jak widać na tym przykładzie, dynamika perturbacyjna nie jest autonomiczna bo
+			równania stanu tego układu $x_1 = e, x_2 = \dot{e} $ jawnie zależą od czasu (poprzez obecność
+			w drugim równaniu $x^*(t)$).
+			Natomiast w przypadku autonomicznego modelu liniowego, równanie dynamiki
+			perturbacyjnej jest nadal autonomiczne: $\dot{e}(t) = A e(t)$.
+			W dynamice nieliniowej rozróżniamy następujące kategorie stabilności:
+			\begin{itemize}
+				\item stabilność asymptotyczną,
+				\item stabilność wykładniczą (z wykładniczą zależnością kryterium od czasu),
+				\item stabilność globalną (absolutną).
+			\end{itemize}
+			Niech $ | x | < R$ oznacza wnętrze hiperkuli o promieniu $R$ i o środku w wybranym $i$-tym
+			punkcie stacjonarnym $x_s^i$, w $n$-wymiarowej, metrycznej przestrzeni stanu.
+			Oznaczana jest $B_n(x_s^i, R)$. Układ współrzędnych stanu został równolegle przeniesiony do
+			punktu stacjonarnego w taki sposób, że stanowi on teraz początek przeniesionego
+			układu współrzędnych. Po translacji układu współrzędnych hiperkulę oznaczamy
+			$B_n(0,R)$ lub krótko $B(R)$.
+			\begin{verbatim}
+				Stan równowagi $x_s^i$ jest stabilny (w nowym, przeniesionym układzie współrzędnych jest
+				to x =0), jeżeli dla dowolnego R >0 istnieje r>0 takie, że:
+				||x(0) ||< r \to ||x(t)||< R
+				$\forall t > 0$.
+				Jest to definicja stabilności w sensie Lapunowa. Wyrażona w stylu Cauchy’ego ($\forall R \foreach r).
+			\end{verbatim}
 \end{document}
